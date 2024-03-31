@@ -15,4 +15,7 @@ func main() {
 
 	fmt.Print("Input Tax Rate: ")
 	fmt.Scan(&taxRate)
+
+	ebt := revenue - expences
+	profit := float64(ebt) * (1 - taxRate)
 }
