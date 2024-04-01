@@ -36,3 +36,9 @@ func main() {
 func outputText(text string) {
 	fmt.Print(text)
 }
+
+func calculateFunction(investmentAmount expectedReturnRate years, floast64) float64 {
+	fv := investmentAmount * math.Pow(1+expectedReturnRate/100, years)
+	rfv := futureValue / math.Pow(1+inflationRate/100, years)
+	return fv, rfv
+}
