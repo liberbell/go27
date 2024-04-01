@@ -11,6 +11,8 @@ func main() {
 	expenses := getUserInput("Input Expence: ")
 	taxRate := getUserInput("Input Tax Rate: ")
 
+	ebt, profit, ratio := calculateFinancial(revenue, expenses, taxRate)
+
 	fmt.Println("ebt: ", ebt)
 	fmt.Println("profit:", profit)
 	fmt.Println("ratio: ", ratio)
