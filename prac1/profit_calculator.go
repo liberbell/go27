@@ -3,17 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	var revenue float64
-	var expenses float64
-	var taxRate float64
+	// var revenue float64
+	// var expenses float64
+	// var taxRate float64
 
-	revenue = getUserInput("Input Revenue: ")
-
-	fmt.Print("Input Expence: ")
-	fmt.Scan(&expenses)
-
-	fmt.Print("Input Tax Rate: ")
-	fmt.Scan(&taxRate)
+	revenue := getUserInput("Input Revenue: ")
+	expenses := getUserInput("Input Expence: ")
+	taxRate := getUserInput("Input Tax Rate: ")
 
 	ebt := revenue - expenses
 	profit := ebt * (1 - taxRate/100)
