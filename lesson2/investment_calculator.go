@@ -31,3 +31,7 @@ func main() {
 	// fmt.Println("Future Value(adjusted for Inflation): ", futureRealValue)
 	fmt.Print(formattedFV, formattedRFV)
 }
+
+func outputText(text string) {
+	fmt.Print()
+}
