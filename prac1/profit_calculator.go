@@ -7,8 +7,7 @@ func main() {
 	var expenses float64
 	var taxRate float64
 
-	fmt.Print("Input Revenue: ")
-	fmt.Scan(&revenue)
+	revenue = getUserInput("Input Revenue: ")
 
 	fmt.Print("Input Expence: ")
 	fmt.Scan(&expenses)
@@ -25,8 +24,9 @@ func main() {
 	fmt.Println(ratio)
 }
 
-func getUserInput(infoText string) {
+func getUserInput(infoText string) float64 {
 	var userInput float64
 	fmt.Print(infoText)
 	fmt.Scan(&userInput)
+	return userInput
 }
