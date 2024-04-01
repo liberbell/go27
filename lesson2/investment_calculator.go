@@ -11,7 +11,8 @@ func main() {
 	var years float64
 	expectedReturnRate := 5.5
 
-	fmt.Print("Investment Amout: ")
+	// fmt.Print("Investment Amout: ")
+	outputText("Investment Amout: ")
 	fmt.Scan(&investmentAmount)
 
 	fmt.Print("Expected Return Rate: ")
