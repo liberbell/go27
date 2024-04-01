@@ -33,5 +33,5 @@ func main() {
 }
 
 func outputText(text string) {
-	fmt.Print()
+	fmt.Print(text)
 }
