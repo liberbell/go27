@@ -25,7 +25,7 @@ func main() {
 		fmt.Print("How much do you want to deposit? ")
 		fmt.Scan(&depostAmount)
 		accountBalance = accountBalance + depostAmount
-		fmt.Printf("Depost %.1f. Your Balance is %.1f\n", depostAmount, accountBalance)
+		fmt.Printf("Depost %.1f. New Amount is %.1f\n", depostAmount, accountBalance)
 
 	}
 
