@@ -13,9 +13,9 @@ func main() {
 
 	ebt, profit, ratio := calculateFinancial(revenue, expenses, taxRate)
 
-	fmt.Printf("ebt: %.1f", ebt)
-	fmt.Printf("profit: %.1f", profit)
-	fmt.Printf("ratio: %.1f", ratio)
+	fmt.Printf("ebt: %.1f\n", ebt)
+	fmt.Printf("profit: %.1f\n", profit)
+	fmt.Printf("ratio: %.1f\n", ratio)
 }
 
 func getUserInput(infoText string) float64 {
