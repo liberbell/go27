@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	var accountBalance = 1000.0
-	var depostBalance float64
+	var depostAmount float64
 
 	fmt.Println("Welcome to Go Bank.")
 	fmt.Println("What do you want to do?")
@@ -23,7 +23,7 @@ func main() {
 		fmt.Println("Your Balance is ", accountBalance)
 	} else if choice == 2 {
 		fmt.Print("How much do you want to deposit?")
-		fmt.Scan(&depostBalance)
+		fmt.Scan(&depostAmount)
 		if accountBalance > depostBalance {
 			accountBalance = accountBalance - depostBalance
 			fmt.Printf("Depost %.1f. Your Balance is %.1f\n", depostBalance, accountBalance)
