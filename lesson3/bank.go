@@ -22,14 +22,11 @@ func main() {
 	if choice == 1 {
 		fmt.Println("Your Balance is ", accountBalance)
 	} else if choice == 2 {
-		fmt.Print("How much do you want to deposit?")
+		fmt.Print("How much do you want to deposit? ")
 		fmt.Scan(&depostAmount)
-		if accountBalance > depostBalance {
-			accountBalance = accountBalance - depostBalance
-			fmt.Printf("Depost %.1f. Your Balance is %.1f\n", depostBalance, accountBalance)
-		} else {
-			fmt.Println("Your Balance is too low.")
-		}
+		accountBalance = accountBalance + depostAmount
+		fmt.Printf("Depost %.1f. Your Balance is %.1f\n", depostAmount, accountBalance)
+
 	}
 
 	fmt.Println("Your choice is: ", choice)
