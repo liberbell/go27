@@ -11,6 +11,7 @@ func main() {
 	fmt.Println("4 Exit")
 
 	var choice int
+	fmt.Print("Your choice: ")
 	fmt.Scan(&choice)
 
 	fmt.Println("Your choice is: ", choice)
