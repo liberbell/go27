@@ -36,7 +36,8 @@ func main() {
 		} else {
 			fmt.Println("Ooops! Your are poor.")
 		}
+	} else if choice == 4 {
+		fmt.Println("Goodbye!")
 	}
 
-	fmt.Println("Your choice is: ", choice)
 }
