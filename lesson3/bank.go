@@ -30,7 +30,7 @@ func main() {
 	} else if choice == 3 {
 		fmt.Print("How much do you want to withdraw? ")
 		fmt.Scan(&withdrawAmount)
-		if withdrawAmount <= depostAmount {
+		if withdrawAmount <= accountBalance {
 			accountBalance -= withdrawAmount
 			fmt.Printf("Withdraw Amount is %.1f. New Amount is %.1f\n", withdrawAmount, accountBalance)
 		} else {
