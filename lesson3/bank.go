@@ -23,6 +23,9 @@ func main() {
 	if choice == 1 {
 		fmt.Println("Your Balance is ", accountBalance)
 	} else if choice == 2 {
+		if depostAmount <= 0 {
+			fmt.Println("Invalid amount. Must be greater than zero.")
+		}
 		fmt.Print("How much do you want to deposit? ")
 		fmt.Scan(&depostAmount)
 		accountBalance = accountBalance + depostAmount
