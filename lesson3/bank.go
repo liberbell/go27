@@ -35,6 +35,24 @@ func main() {
 
 			accountBalance = accountBalance + depostAmount
 			fmt.Printf("Depost %.1f. New Amount is %.1f\n", depostAmount, accountBalance)
+
+		case 3:
+			fmt.Print("How much do you want to withdraw? ")
+			fmt.Scan(&withdrawAmount)
+			if withdrawAmount <= 0 {
+				fmt.Println("Invalid amount. Must be greater than zero.")
+				return
+			}
+
+			if withdrawAmount <= accountBalance {
+				accountBalance -= withdrawAmount
+				fmt.Printf("Withdraw Amount is %.1f. New Amount is %.1f\n", withdrawAmount, accountBalance)
+			} else {
+				fmt.Println("Ooops! Your are poor.")
+			}
+		default:
+			fmt.Println("Goodbye!")
+			return
 		}
 
 		if choice == 1 {
