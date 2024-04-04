@@ -21,6 +21,22 @@ func main() {
 
 		// wantCheckBBalance := choice == 1
 
+		switch choice {
+		case 1:
+			fmt.Println("Your Balance is ", accountBalance)
+
+		case 2:
+			fmt.Print("How much do you want to deposit? ")
+			fmt.Scan(&depostAmount)
+			if depostAmount <= 0 {
+				fmt.Println("Invalid amount. Must be greater than zero.")
+				continue
+			}
+
+			accountBalance = accountBalance + depostAmount
+			fmt.Printf("Depost %.1f. New Amount is %.1f\n", depostAmount, accountBalance)
+		}
+
 		if choice == 1 {
 			fmt.Println("Your Balance is ", accountBalance)
 		} else if choice == 2 {
