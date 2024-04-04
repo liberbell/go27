@@ -3,16 +3,21 @@ package main
 import (
 	"fmt"
 	"os"
+	"strconv"
 )
 
 const accountBalanceFile = "balance.txt"
 
-func getBalanceFromFile() (balanceText float64) {
+func getBalanceFromFile() {
 	data, err := os.ReadFile(accountBalanceFile)
 	if err != nil {
 		fmt.Println("Error reading balance file: ", err)
 	}
-	balanceText = fmt.Sprint(data)
+	balanceText = string(data)
+	balance, err := strconv.ParseFloat(balanceText, 64)
+	if err != nil {
+		fmt.Println("Error parsing balance: ", err)
+	}
 	return balanceText
 }
 
