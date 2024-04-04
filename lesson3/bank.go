@@ -43,6 +43,7 @@ func main() {
 
 			accountBalance = accountBalance + depostAmount
 			fmt.Printf("Depost %.1f. New Amount is %.1f\n", depostAmount, accountBalance)
+			writeBalanceTofile(accountBalance)
 
 		case 3:
 			fmt.Print("How much do you want to withdraw? ")
@@ -55,6 +56,7 @@ func main() {
 			if withdrawAmount <= accountBalance {
 				accountBalance -= withdrawAmount
 				fmt.Printf("Withdraw Amount is %.1f. New Amount is %.1f\n", withdrawAmount, accountBalance)
+				writeBalanceTofile(accountBalance)
 			} else {
 				fmt.Println("Ooops! Your are poor.")
 				continue
