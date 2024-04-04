@@ -49,6 +49,7 @@ func main() {
 				fmt.Printf("Withdraw Amount is %.1f. New Amount is %.1f\n", withdrawAmount, accountBalance)
 			} else {
 				fmt.Println("Ooops! Your are poor.")
+				return
 			}
 		default:
 			fmt.Println("Goodbye!")
