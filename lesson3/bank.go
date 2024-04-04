@@ -15,9 +15,10 @@ func main() {
 	var depostAmount float64
 	var withdrawAmount float64
 
+	fmt.Println("Welcome to Go Bank.")
+	fmt.Println("What do you want to do?")
+
 	for {
-		fmt.Println("Welcome to Go Bank.")
-		fmt.Println("What do you want to do?")
 		fmt.Println("1 Check balance")
 		fmt.Println("2 Deposit money")
 		fmt.Println("3 Withdraw money")
