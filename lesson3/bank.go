@@ -7,8 +7,13 @@ import (
 
 const accountBalanceFile = "balance.txt"
 
-func getBalanceFromFile() {
-	os.ReadFile(accountBalanceFile, []byte)
+func getBalanceFromFile() (balanceText float64) {
+	data, err := os.ReadFile(accountBalanceFile)
+	if err != nil {
+		fmt.Println("Error reading balance file: ", err)
+	}
+	balanceText = fmt.Sprint(data)
+	return balanceText
 }
 
 func writeBalanceTofile(balance float64) {
