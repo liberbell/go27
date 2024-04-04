@@ -49,6 +49,7 @@ func main() {
 			}
 		} else if choice == 4 {
 			fmt.Println("Goodbye!")
+			return
 		}
 	}
 }
