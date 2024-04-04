@@ -41,7 +41,7 @@ func main() {
 			fmt.Scan(&withdrawAmount)
 			if withdrawAmount <= 0 {
 				fmt.Println("Invalid amount. Must be greater than zero.")
-				return
+				continue
 			}
 
 			if withdrawAmount <= accountBalance {
@@ -49,7 +49,7 @@ func main() {
 				fmt.Printf("Withdraw Amount is %.1f. New Amount is %.1f\n", withdrawAmount, accountBalance)
 			} else {
 				fmt.Println("Ooops! Your are poor.")
-				return
+				continue
 			}
 		default:
 			fmt.Println("Goodbye!")
@@ -86,6 +86,7 @@ func main() {
 		// 	fmt.Println("Goodbye!")
 		// 	return
 		// }
-	// }
-	fmt.Printl("Thanks for choosing our bank.")
+		// }
+		fmt.Println("Thanks for choosing our bank.")
+	}
 }
