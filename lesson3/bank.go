@@ -28,7 +28,7 @@ func main() {
 			fmt.Scan(&depostAmount)
 			if depostAmount <= 0 {
 				fmt.Println("Invalid amount. Must be greater than zero.")
-				return
+				continue
 			}
 
 			accountBalance = accountBalance + depostAmount
