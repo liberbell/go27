@@ -52,4 +52,5 @@ func main() {
 			return
 		}
 	}
+	fmt.Printl("Thanks for choosing our bank.")
 }
