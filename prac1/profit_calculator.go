@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"errors"
 )
@@ -28,6 +29,10 @@ func main() {
 	fmt.Printf("ebt: %.1f\n", ebt)
 	fmt.Printf("profit: %.1f\n", profit)
 	fmt.Printf("ratio: %.1f\n", ratio)
+}
+
+func storeResult(ebt, profit, ratio float64) {
+	os.WriteFile("result.txt")
 }
 
 func getUserInput(infoText string) (float64, error) {
