@@ -12,11 +12,14 @@ func main() {
 	// var taxRate float64
 
 	revenue, err := getUserInput("Input Revenue: ")
+
+	expenses, err := getUserInput("Input Expence: ")
+
+	taxRate, err := getUserInput("Input Tax Rate: ")
 	if err != nil {
 		fmt.Println(err)
+		return
 	}
-	expenses, err := getUserInput("Input Expence: ")
-	taxRate, err := getUserInput("Input Tax Rate: ")
 
 	ebt, profit, ratio := calculateFinancial(revenue, expenses, taxRate)
 
