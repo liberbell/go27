@@ -11,9 +11,12 @@ func main() {
 	// var expenses float64
 	// var taxRate float64
 
-	revenue := getUserInput("Input Revenue: ")
-	expenses := getUserInput("Input Expence: ")
-	taxRate := getUserInput("Input Tax Rate: ")
+	revenue, err := getUserInput("Input Revenue: ")
+	if err != nil {
+		fmt.Println(err)
+	}
+	expenses, err := getUserInput("Input Expence: ")
+	taxRate, err := getUserInput("Input Tax Rate: ")
 
 	ebt, profit, ratio := calculateFinancial(revenue, expenses, taxRate)
 
@@ -30,7 +33,7 @@ func getUserInput(infoText string) (float64, error) {
 		fmt.Println("Invalid input value")
 		return 0, errors.New("Value must be positive")
 	}
-	return userInput
+	return userInput, nil
 }
 
 func calculateFinancial(revenue, expenses, taxRate float64) (float64, float64, float64) {
