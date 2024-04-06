@@ -19,8 +19,9 @@ func getBalanceFromFile() (float64, error) {
 	balance, err := strconv.ParseFloat(balanceText, 64)
 	if err != nil {
 		fmt.Println("Error parsing balance: ", err)
+		return 1000, errors.New("Failed to parse balance")
 	}
-	return balance
+	return balance, nil
 }
 
 func writeBalanceTofile(balance float64) {
@@ -29,7 +30,12 @@ func writeBalanceTofile(balance float64) {
 }
 
 func main() {
-	var accountBalance = getBalanceFromFile()
+	var accountBalance, err = getBalanceFromFile()
+
+	if err != nil {
+		fmt.Println("Error: ", err)
+	}
+
 	var depostAmount float64
 	var withdrawAmount float64
 
