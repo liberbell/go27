@@ -8,17 +8,17 @@ import (
 
 const accountBalanceFile = "balance.txt"
 
-func getBalanceFromFile() {
+func getBalanceFromFile() float64 {
 	data, err := os.ReadFile(accountBalanceFile)
 	if err != nil {
 		fmt.Println("Error reading balance file: ", err)
 	}
-	balanceText = string(data)
+	balanceText := string(data)
 	balance, err := strconv.ParseFloat(balanceText, 64)
 	if err != nil {
 		fmt.Println("Error parsing balance: ", err)
 	}
-	return balanceText
+	return balance
 }
 
 func writeBalanceTofile(balance float64) {
