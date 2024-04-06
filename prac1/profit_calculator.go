@@ -32,6 +32,7 @@ func main() {
 }
 
 func storeResult(ebt, profit, ratio float64) {
+	results := fmt.Sprintf("EBT: %.1f\n Profit: %.1f\n Ratio: %.3f", ebt, profit, ratio)
 	os.WriteFile("result.txt")
 }
 
