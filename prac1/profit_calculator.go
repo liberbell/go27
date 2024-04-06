@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/pkg/errors"
+)
 
 func main() {
 	// var revenue float64
@@ -18,10 +22,14 @@ func main() {
 	fmt.Printf("ratio: %.1f\n", ratio)
 }
 
-func getUserInput(infoText string) float64 {
+func getUserInput(infoText string) (float64, error) {
 	var userInput float64
 	fmt.Print(infoText)
 	fmt.Scan(&userInput)
+	if userInput <= 0 {
+		fmt.Println("Invalid input value")
+		return 0, errors.New("Value must be positive")
+	}
 	return userInput
 }
 
