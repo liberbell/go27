@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"strconv"
@@ -8,10 +9,11 @@ import (
 
 const accountBalanceFile = "balance.txt"
 
-func getBalanceFromFile() float64 {
+func getBalanceFromFile() (float64, error) {
 	data, err := os.ReadFile(accountBalanceFile)
 	if err != nil {
 		fmt.Println("Error reading balance file: ", err)
+		return 1000, errors.New("Failed to read balance file.")
 	}
 	balanceText := string(data)
 	balance, err := strconv.ParseFloat(balanceText, 64)
