@@ -27,7 +27,7 @@ func writeBalanceTofile(balance float64) {
 }
 
 func main() {
-	var accountBalance = 1000.0
+	var accountBalance = getBalanceFromFile()
 	var depostAmount float64
 	var withdrawAmount float64
 
