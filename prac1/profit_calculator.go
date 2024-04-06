@@ -33,7 +33,7 @@ func main() {
 
 func storeResult(ebt, profit, ratio float64) {
 	results := fmt.Sprintf("EBT: %.1f\n Profit: %.1f\n Ratio: %.3f", ebt, profit, ratio)
-	os.WriteFile("result.txt")
+	os.WriteFile("result.txt", []byte(results), 0644)
 }
 
 func getUserInput(infoText string) (float64, error) {
