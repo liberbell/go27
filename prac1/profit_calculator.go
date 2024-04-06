@@ -29,6 +29,7 @@ func main() {
 	fmt.Printf("ebt: %.1f\n", ebt)
 	fmt.Printf("profit: %.1f\n", profit)
 	fmt.Printf("ratio: %.1f\n", ratio)
+	storeResult(ebt, profit, ratio)
 }
 
 func storeResult(ebt, profit, ratio float64) {
