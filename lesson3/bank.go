@@ -3,13 +3,13 @@ package main
 import (
 	"fmt"
 
-	_ "example.com/bank/fileops"
+	"example.com/bank/fileops"
 )
 
 const accountBalanceFile = "balance.txt"
 
 func main() {
-	var accountBalance, err = fileops.getFloatFromFile(accountBalanceFile)
+	var accountBalance, err = fileops.GetFloatFromFile(accountBalanceFile)
 
 	if err != nil {
 		fmt.Println("Error: ", err)
@@ -43,7 +43,7 @@ func main() {
 
 			accountBalance = accountBalance + depostAmount
 			fmt.Printf("Depost %.1f. New Amount is %.1f\n", depostAmount, accountBalance)
-			writeFloatTofile(accountBalance, accountBalanceFile)
+			fileops.WriteFloatTofile(accountBalance, accountBalanceFile)
 
 		case 3:
 			fmt.Print("How much do you want to withdraw? ")
