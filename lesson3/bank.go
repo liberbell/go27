@@ -24,9 +24,9 @@ func getFloatFromFile(fileName string) (float64, error) {
 	return balance, nil
 }
 
-func writeFloatTofile(value float64) {
+func writeFloatTofile(value float64, fileName string) {
 	valueText := fmt.Sprint(value)
-	os.WriteFile(accountBalanceFile, []byte(valueText), 0644)
+	os.WriteFile(fileName, []byte(valueText), 0644)
 }
 
 func main() {
@@ -64,7 +64,7 @@ func main() {
 
 			accountBalance = accountBalance + depostAmount
 			fmt.Printf("Depost %.1f. New Amount is %.1f\n", depostAmount, accountBalance)
-			writeBalanceTofile(accountBalance)
+			writeFloatTofile(accountBalance, accountBalanceFile)
 
 		case 3:
 			fmt.Print("How much do you want to withdraw? ")
