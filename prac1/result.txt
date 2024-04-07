@@ -1,3 +1,3 @@
-EBT: 950.0
- Profit: 712.5
- Ratio: 1.333
+EBT: 9500.0
+Profit: 7600.0
+Ratio: 1.250
