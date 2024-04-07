@@ -9,11 +9,11 @@ import (
 
 const accountBalanceFile = "balance.txt"
 
-func getBalanceFromFile() (float64, error) {
-	data, err := os.ReadFile(accountBalanceFile)
+func getFloatFromFile(fileName string) (float64, error) {
+	data, err := os.ReadFile(fileName)
 	if err != nil {
 		fmt.Println("Error reading balance file: ", err)
-		return 1000, errors.New("Failed to read balance file.")
+		return 1000, errors.New("Failed to find file.")
 	}
 	balanceText := string(data)
 	balance, err := strconv.ParseFloat(balanceText, 64)
@@ -30,7 +30,7 @@ func writeBalanceTofile(balance float64) {
 }
 
 func main() {
-	var accountBalance, err = getBalanceFromFile()
+	var accountBalance, err = getFloatFromFile()
 
 	if err != nil {
 		fmt.Println("Error: ", err)
