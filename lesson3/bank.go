@@ -86,38 +86,6 @@ func main() {
 			fmt.Println("Goodbye!")
 			return
 		}
-
-		// if choice == 1 {
-		// 	fmt.Println("Your Balance is ", accountBalance)
-		// } else if choice == 2 {
-		// 	fmt.Print("How much do you want to deposit? ")
-		// 	fmt.Scan(&depostAmount)
-		// 	if depostAmount <= 0 {
-		// 		fmt.Println("Invalid amount. Must be greater than zero.")
-		// 		continue
-		// 	}
-
-		// 	accountBalance = accountBalance + depostAmount
-		// 	fmt.Printf("Depost %.1f. New Amount is %.1f\n", depostAmount, accountBalance)
-		// } else if choice == 3 {
-		// 	fmt.Print("How much do you want to withdraw? ")
-		// 	fmt.Scan(&withdrawAmount)
-		// 	if withdrawAmount <= 0 {
-		// 		fmt.Println("Invalid amount. Must be greater than zero.")
-		// 		return
-		// 	}
-
-		// 	if withdrawAmount <= accountBalance {
-		// 		accountBalance -= withdrawAmount
-		// 		fmt.Printf("Withdraw Amount is %.1f. New Amount is %.1f\n", withdrawAmount, accountBalance)
-		// 	} else {
-		// 		fmt.Println("Ooops! Your are poor.")
-		// 	}
-		// } else if choice == 4 {
-		// 	fmt.Println("Goodbye!")
-		// 	return
-		// }
-		// }
 	}
 	fmt.Println("Thanks for choosing our bank.")
 }
