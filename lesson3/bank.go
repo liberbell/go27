@@ -15,11 +15,11 @@ func getFloatFromFile(fileName string) (float64, error) {
 		fmt.Println("Error reading balance file: ", err)
 		return 1000, errors.New("Failed to find file.")
 	}
-	balanceText := string(data)
-	balance, err := strconv.ParseFloat(balanceText, 64)
+	valueText := string(data)
+	balance, err := strconv.ParseFloat(valueText, 64)
 	if err != nil {
 		fmt.Println("Error parsing balance: ", err)
-		return 1000, errors.New("Failed to parse balance")
+		return 1000, errors.New("Failed to parse stored value")
 	}
 	return balance, nil
 }
