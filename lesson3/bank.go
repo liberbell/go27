@@ -77,7 +77,7 @@ func main() {
 			if withdrawAmount <= accountBalance {
 				accountBalance -= withdrawAmount
 				fmt.Printf("Withdraw Amount is %.1f. New Amount is %.1f\n", withdrawAmount, accountBalance)
-				writeBalanceTofile(accountBalance)
+				writeFloatTofile(accountBalance, accountBalanceFile)
 			} else {
 				fmt.Println("Ooops! Your are poor.")
 				continue
