@@ -24,13 +24,13 @@ func getFloatFromFile(fileName string) (float64, error) {
 	return balance, nil
 }
 
-func writeBalanceTofile(balance float64) {
-	balanceText := fmt.Sprint(balance)
-	os.WriteFile(accountBalanceFile, []byte(balanceText), 0644)
+func writeFloatTofile(value float64) {
+	valueText := fmt.Sprint(value)
+	os.WriteFile(accountBalanceFile, []byte(valueText), 0644)
 }
 
 func main() {
-	var accountBalance, err = getFloatFromFile()
+	var accountBalance, err = getFloatFromFile(accountBalanceFile)
 
 	if err != nil {
 		fmt.Println("Error: ", err)
