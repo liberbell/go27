@@ -13,12 +13,20 @@ func main() {
 	// var taxRate float64
 
 	revenue, err := getUserInput("Input Revenue: ")
+	if err != nil {
+		fmt.Println("Revenue input error", err)
+		return
+	}
 
 	expenses, err := getUserInput("Input Expence: ")
+	if err != nil {
+		fmt.Println("Expence input error", err)
+		return
+	}
 
 	taxRate, err := getUserInput("Input Tax Rate: ")
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("Tax rate input error", err)
 		return
 	}
 
