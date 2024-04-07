@@ -9,7 +9,7 @@ import (
 const accountBalanceFile = "balance.txt"
 
 func main() {
-	var accountBalance, err = getFloatFromFile(accountBalanceFile)
+	var accountBalance, err = fileops.getFloatFromFile(accountBalanceFile)
 
 	if err != nil {
 		fmt.Println("Error: ", err)
