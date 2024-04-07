@@ -42,6 +42,7 @@ func main() {
 	fmt.Println("Welcome to Go Bank.")
 
 	for {
+		presentOptions()
 
 		var choice int
 		fmt.Print("Your choice: ")
