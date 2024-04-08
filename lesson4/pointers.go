@@ -8,6 +8,6 @@ func main() {
 	fmt.Println("Age: ", age)
 }
 
-func getAdultYears(age int) {
-
+func getAdultYears(age int) int {
+	return age - 18
 }
