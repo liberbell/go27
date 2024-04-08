@@ -14,7 +14,7 @@ func main() {
 	fmt.Println(age)
 }
 
-func getAdultYears(age *int) int {
+func getAdultYears(age *int) {
 	// return *age - 18
 	*age = *age - 8
 }
