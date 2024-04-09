@@ -7,7 +7,7 @@ func main() {
 	lastName := getUserData("Please enter your last name: ")
 	birthDate := getUserData("Please enter your birthday: ")
 
-	fmt.Println(firstName, lastName, birthDate3)
+	fmt.Println(firstName, lastName, birthDate)
 }
 
 func getUserData(promptoText string) string {
