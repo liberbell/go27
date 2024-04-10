@@ -17,10 +17,9 @@ func (u user) outputUserDetail() {
 	fmt.Println(u.firstName, u.lastName, u.birthDate)
 }
 
-func (u user) clearUserName() {
+func (u *user) clearUserName() {
 	u.firstName = ""
 	u.lastName = ""
-	u.birthDate = ""
 }
 
 func main() {
@@ -33,7 +32,7 @@ func main() {
 		firstName: userfirstName,
 		lastName:  userlastName,
 		birthDate: userbirthDate,
-		createdAt: time.Now(),
+		createdAt: time.Now()
 	}
 
 	// outputUserDetail(&appUser)
