@@ -20,7 +20,7 @@ func main() {
 	var appUser user
 	appUser = user{
 		firstName: userfirstName,
-		lastName:  userfirstName,
+		lastName:  userlastName,
 		birthDate: userbirthDate,
 		createdAt: time.Now(),
 	}
