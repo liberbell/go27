@@ -22,6 +22,7 @@ func main() {
 		firstName: userfirstName,
 		lastName:  userfirstName,
 		birthDate: userbirthDate,
+		createdAt: time.Now(),
 	}
 
 	fmt.Println(firstName, lastName, birthDate)
