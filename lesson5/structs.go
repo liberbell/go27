@@ -24,7 +24,7 @@ func (u *user) clearUserName() {
 }
 
 func newUser(firstName, lastName, birthdate string) (*user error) {
-	if firstName == "" || lastName == "" {
+	if firstName == "" || lastName == "" || birthdate == "" {
 		return nil, errors.New("First name and Last Name and Birth date must be required")
 	}
 	return &user{
@@ -32,7 +32,7 @@ func newUser(firstName, lastName, birthdate string) (*user error) {
 		lastName:  lastName,
 		birthDate: birthdate,
 		createdAt: time.Now(),
-	}
+	}, nil
 }
 
 func main() {
