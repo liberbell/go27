@@ -41,7 +41,10 @@ func main() {
 	userbirthDate := getUserData("Please enter your birthday(MM/DD/YYYY): ")
 
 	var appUser *user
-	appUser = newUser(userfirstName, userlastName, userbirthDate)
+	appUser, err = newUser(userfirstName, userlastName, userbirthDate)
+	if err != nil {
+		return
+	}
 
 	// outputUserDetail(&appUser)
 	appUser.outputUserDetail()
