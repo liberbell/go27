@@ -43,6 +43,7 @@ func main() {
 	var appUser *user
 	appUser, err = newUser(userfirstName, userlastName, userbirthDate)
 	if err != nil {
+		fmt.Println(err)
 		return
 	}
 
