@@ -39,6 +39,7 @@ func main() {
 	// outputUserDetail(&appUser)
 	appUser.outputUserDetail()
 	appUser.clearUserName()
+	appUser.outputUserDetail()
 }
 
 func getUserData(promptoText string) string {
