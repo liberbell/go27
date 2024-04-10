@@ -25,7 +25,7 @@ func main() {
 		createdAt: time.Now(),
 	}
 
-	fmt.Println(firstName, lastName, birthDate)
+	fmt.Println(appUser)
 }
 
 func outputUserDetail(u user) {
