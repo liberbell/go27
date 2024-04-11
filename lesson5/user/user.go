@@ -19,8 +19,8 @@ func (u User) OutputUserDetail() {
 }
 
 func (u *User) ClearUserName() {
-	u.firstName = ""
-	u.lastName = ""
+	u.FirstName = ""
+	u.LastName = ""
 }
 
 func NewUser(firstName, lastName, birthdate string) (*User, error) {
@@ -28,9 +28,9 @@ func NewUser(firstName, lastName, birthdate string) (*User, error) {
 		return nil, errors.New("First name and Last Name and Birth date must be required")
 	}
 	return &User{
-		firstName: firstName,
-		lastName:  lastName,
-		birthDate: birthdate,
-		createdAt: time.Now(),
+		FirstName: firstName,
+		LastName:  lastName,
+		BirthDate: birthdate,
+		CreatedAt: time.Now(),
 	}, nil
 }
