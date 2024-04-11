@@ -41,7 +41,7 @@ func main() {
 	userbirthDate := getUserData("Please enter your birthday(MM/DD/YYYY): ")
 
 	var appUser *user
-	appUser, err = newUser(userfirstName, userlastName, userbirthDate)
+	appUser, err := newUser(userfirstName, userlastName, userbirthDate)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -56,6 +56,6 @@ func main() {
 func getUserData(promptoText string) string {
 	fmt.Print(promptoText)
 	var value string
-	fmt.Scan(&value)
+	fmt.Scanln(&value)
 	return value
 }
