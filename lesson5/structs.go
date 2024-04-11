@@ -11,17 +11,17 @@ func main() {
 	userlastName := getUserData("Please enter your last name: ")
 	userbirthDate := getUserData("Please enter your birthday(MM/DD/YYYY): ")
 
-	var appUser *user
-	appUser, err := newUser(userfirstName, userlastName, userbirthDate)
+	var appUser *User
+	appUser, err := NewUser(userfirstName, userlastName, userbirthDate)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
 	// outputUserDetail(&appUser)
-	appUser.outputUserDetail()
-	appUser.clearUserName()
-	appUser.outputUserDetail()
+	appUser.OutputUserDetail()
+	appUser.ClearUserName()
+	appUser.OutputUserDetail()
 }
 
 func getUserData(promptoText string) string {
