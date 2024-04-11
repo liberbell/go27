@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	_ "example.com/structs/user"
 )
 
 func main() {
