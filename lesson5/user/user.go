@@ -7,15 +7,15 @@ import (
 )
 
 type User struct {
-	firstName string
-	lastName  string
-	birthDate string
-	createdAt time.Time
+	FirstName string
+	LastName  string
+	BirthDate string
+	CreatedAt time.Time
 }
 
 func (u User) OutputUserDetail() {
 
-	fmt.Println(u.firstName, u.lastName, u.birthDate)
+	fmt.Println(u.FirstName, u.LastName, u.BirthDate)
 }
 
 func (u *User) ClearUserName() {
