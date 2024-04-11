@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
+	"os/user"
 
-	_ "example.com/structs/user"
+	"example.com/structs/user"
 )
 
 func main() {
@@ -12,7 +13,7 @@ func main() {
 	userbirthDate := getUserData("Please enter your birthday(MM/DD/YYYY): ")
 
 	var appUser *User
-	appUser, err := NewUser(userfirstName, userlastName, userbirthDate)
+	appUser, err := &user.User.NewUser(userfirstName, userlastName, userbirthDate)
 	if err != nil {
 		fmt.Println(err)
 		return
