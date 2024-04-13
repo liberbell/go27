@@ -18,7 +18,7 @@ func (u user) OutputUserDetail() {
 	fmt.Println(u.FirstName, u.LastName, u.BirthDate)
 }
 
-func (u *user) ClearUserName() {
+func (u *User) ClearUserName() {
 	u.FirstName = ""
 	u.LastName = ""
 }
