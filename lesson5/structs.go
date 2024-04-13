@@ -8,16 +8,15 @@ import (
 )
 
 func main() {
-	userfirstName := getUserData("Please enter your first name: ")
-	userlastName := getUserData("Please enter your last name: ")
-	userbirthDate := getUserData("Please enter your birthday(MM/DD/YYYY): ")
+	userFirstName := getUserData("Please enter your first name: ")
+	userLastName := getUserData("Please enter your last name: ")
+	userBirthDate := getUserData("Please enter your birthday(MM/DD/YYYY): ")
 
 	var appUser *user.User
 
 	// appUser, err := &user.User.NewUser(userfirstName, userlastName, userbirthDate)
-	appUser = &user.User{
-		FirstName: "Max",
-	}
+	appUser = user.NewUser(userFirstName, userLastName, userBirthDate)
+
 	if err != nil {
 		fmt.Println(err)
 		return
