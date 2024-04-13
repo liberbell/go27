@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os/user"
 
 	"example.com/structs/user"
 )
