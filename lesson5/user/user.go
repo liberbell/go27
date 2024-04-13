@@ -13,7 +13,7 @@ type User struct {
 	CreatedAt time.Time
 }
 
-func (u user) OutputUserDetail() {
+func (u User) OutputUserDetail() {
 
 	fmt.Println(u.FirstName, u.LastName, u.BirthDate)
 }
