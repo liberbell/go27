@@ -12,7 +12,7 @@ func main() {
 	userlastName := getUserData("Please enter your last name: ")
 	userbirthDate := getUserData("Please enter your birthday(MM/DD/YYYY): ")
 
-	var appUser *User
+	var appUser *user.User
 
 	// appUser, err := &user.User.NewUser(userfirstName, userlastName, userbirthDate)
 	appUser = &user.User {
