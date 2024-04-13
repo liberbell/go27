@@ -16,6 +16,7 @@ type User struct {
 type Admin struct {
 	email    string
 	password string
+	User
 }
 
 func (u User) OutputUserDetail() {
@@ -26,6 +27,19 @@ func (u User) OutputUserDetail() {
 func (u *User) ClearUserName() {
 	u.FirstName = ""
 	u.LastName = ""
+}
+
+func NewAdmin(email, password string) Admin {
+	return Admin{
+		email:    email,
+		password: password,
+		User: User{
+			FirstName: "ADMIN",
+			LastName:  "ADMIN",
+			BirthDate: "___",
+			CreatedAt: time.Now(),
+		},
+	}
 }
 
 func New(firstName, lastName, birthdate string) (*User, error) {
