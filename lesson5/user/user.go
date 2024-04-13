@@ -16,7 +16,7 @@ type User struct {
 type Admin struct {
 	email    string
 	password string
-	User
+	user     User
 }
 
 func (u User) OutputUserDetail() {
@@ -33,7 +33,7 @@ func NewAdmin(email, password string) Admin {
 	return Admin{
 		email:    email,
 		password: password,
-		User: User{
+		user: User{
 			FirstName: "ADMIN",
 			LastName:  "ADMIN",
 			BirthDate: "___",
