@@ -13,7 +13,11 @@ func main() {
 	userbirthDate := getUserData("Please enter your birthday(MM/DD/YYYY): ")
 
 	var appUser *User
-	appUser, err := &user.User.NewUser(userfirstName, userlastName, userbirthDate)
+
+	// appUser, err := &user.User.NewUser(userfirstName, userlastName, userbirthDate)
+	appUser = &user.User {
+		FirstName: "Max"
+	}
 	if err != nil {
 		fmt.Println(err)
 		return
