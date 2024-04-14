@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"example.com/note/note"
 )
 
 type customString string
@@ -11,12 +13,14 @@ func (text customString) log() {
 }
 
 func main() {
-	title, content, err := getNoteData()
+	title, content := getNoteData()
+
+	userNote, err := note.New(title, content)
+
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-
 }
 
 func getNoteData() (string, string) {
