@@ -36,11 +36,11 @@ func getNoteData() (string, string, error) {
 
 }
 
-func getUserInput(prompt string) (string, error) {
+func getUserInput(prompt string) string {
 	fmt.Print(prompt)
 
 	var value string
 	fmt.Scanln(&value)
 
-	return value, nil
+	return value
 }
