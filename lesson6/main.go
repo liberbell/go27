@@ -15,9 +15,11 @@ func main() {
 
 }
 
-func getUserInput(prompt string) {
+func getUserInput(prompt string) string {
 	fmt.Print(prompt)
 
 	var value string
-	fmt.Scan()
+	fmt.Scan(&value)
+
+	return value
 }
