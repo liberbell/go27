@@ -11,4 +11,6 @@ func (text customString) log() {
 func main() {
 	var name customString = "max"
 
+	name.log()
+
 }
