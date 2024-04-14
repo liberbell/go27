@@ -14,9 +14,30 @@ func (text customString) log() {
 func main() {
 	title, err := getUserInput("Note tilte: ")
 	if err != nil {
-		return errors
+		fmt.Println(err)
+		return
 	}
-	content := getUserInput("Note content: ")
+
+	content, err := getUserInput("Note content: ")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+}
+
+func getNoteData() {
+	title, err := getUserInput("Note tilte: ")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	content, err := getUserInput("Note content: ")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
 }
 
