@@ -26,11 +26,11 @@ func main() {
 
 }
 
-func getNoteData() {
+func getNoteData() (string, string, error) {
 	title, err := getUserInput("Note tilte: ")
 	if err != nil {
 		fmt.Println(err)
-		return
+		return "", "", err
 	}
 
 	content, err := getUserInput("Note content: ")
