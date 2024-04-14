@@ -14,3 +14,10 @@ func main() {
 	name.log()
 
 }
+
+func getUserInput(prompt string) {
+	fmt.Print(prompt)
+
+	var value string
+	fmt.Scan()
+}
