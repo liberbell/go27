@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 type customString string
 
@@ -15,11 +18,15 @@ func main() {
 
 }
 
-func getUserInput(prompt string) string {
+func getUserInput(prompt string) (string, error) {
 	fmt.Print(prompt)
 
 	var value string
 	fmt.Scan(&value)
+
+	if value == "" {
+		return "", errors.New("Invalid input.")
+	}
 
 	return value
 }
