@@ -1,6 +1,9 @@
 package note
 
-import "time"
+import (
+	"errors"
+	"time"
+)
 
 type Note struct {
 	title     string
@@ -8,10 +11,14 @@ type Note struct {
 	createdAt time.Time
 }
 
-func New(title, content string) Note {
+func New(title, content string) (Note, error) {
+	if title == "" {
+		return "", errors.New("Invalid input.")
+	}
+
 	return Note{
 		title:     title,
 		content:   content,
 		createdAt: time.Now(),
-	}
+	}, nil
 }
