@@ -40,6 +40,7 @@ func getUserInput(prompt string) string {
 	fmt.Print(prompt)
 
 	reader := bufio.NewReader(os.Stdin)
+	reader.ReadString('\n')
 
 	return value
 }
