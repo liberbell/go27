@@ -28,5 +28,5 @@ func getUserInput(prompt string) (string, error) {
 		return "", errors.New("Invalid input.")
 	}
 
-	return value
+	return value, nil
 }
