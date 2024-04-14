@@ -19,20 +19,12 @@ func main() {
 
 }
 
-func getNoteData() (string, string, error) {
-	title, err := getUserInput("Note tilte: ")
-	if err != nil {
-		fmt.Println(err)
-		return "", "", err
-	}
+func getNoteData() (string, string) {
+	title := getUserInput("Note tilte: ")
 
-	content, err := getUserInput("Note content: ")
-	if err != nil {
-		fmt.Println(err)
-		return "", "", err
-	}
+	content := getUserInput("Note content: ")
 
-	return title, content, nil
+	return title, content
 
 }
 
