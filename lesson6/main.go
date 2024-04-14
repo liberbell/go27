@@ -36,8 +36,10 @@ func getNoteData() (string, string, error) {
 	content, err := getUserInput("Note content: ")
 	if err != nil {
 		fmt.Println(err)
-		return
+		return "", "", err
 	}
+
+	return title, content, nil
 
 }
 
