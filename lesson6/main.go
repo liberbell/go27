@@ -22,6 +22,7 @@ func main() {
 		return
 	}
 	userNote.Display()
+
 }
 
 func getNoteData() (string, string) {
