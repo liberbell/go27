@@ -1,7 +1,6 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 )
 
@@ -41,11 +40,7 @@ func getUserInput(prompt string) (string, error) {
 	fmt.Print(prompt)
 
 	var value string
-	fmt.Scan(&value)
-
-	if value == "" {
-		return "", errors.New("Invalid input.")
-	}
+	fmt.Scanln(&value)
 
 	return value, nil
 }
