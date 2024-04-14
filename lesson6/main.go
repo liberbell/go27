@@ -12,9 +12,11 @@ func (text customString) log() {
 }
 
 func main() {
-	var name customString = "max"
-
-	name.log()
+	title, err := getUserInput("Note tilte: ")
+	if err != nil {
+		return errors
+	}
+	content := getUserInput("Note content: ")
 
 }
 
