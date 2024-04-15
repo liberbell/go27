@@ -21,7 +21,7 @@ func (note Note) Display() {
 func (note Note) Save() {
 	filename := strings.ReplaceAll(note.title, " ", "_")
 	filename = strings.ToLower(filename)
-	os.WriteFile(filename)
+	os.WriteFile(filename, 0644)
 }
 
 func New(title, content string) (Note, error) {
