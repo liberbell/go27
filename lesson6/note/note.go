@@ -26,7 +26,7 @@ func (note Note) Save() error {
 	if err != nil {
 		return err
 	}
-	os.WriteFile(filename, json, 0644)
+	return os.WriteFile(filename, json, 0644)
 }
 
 func New(title, content string) (Note, error) {
