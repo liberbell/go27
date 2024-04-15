@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strings"
 
 	"example.com/note/note"
 )
@@ -40,7 +41,12 @@ func getUserInput(prompt string) string {
 	fmt.Print(prompt)
 
 	reader := bufio.NewReader(os.Stdin)
-	reader.ReadString('\n')
+	text, err := reader.ReadString('\n')
+	if err != nil {
+		return ""
+	}
+	text = strings.TrimSuffix(text, "\n")
+	text = strings.TrimSuffix(text, "\r")
 
-	return value
+	return text
 }
