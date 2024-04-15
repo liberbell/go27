@@ -30,7 +30,7 @@ func main() {
 	if err != nil {
 		fmt.Println("Saving the note failed: ", err)
 	}
-
+	fmt.Println("Saving the note succeeded")
 }
 
 func getNoteData() (string, string) {
