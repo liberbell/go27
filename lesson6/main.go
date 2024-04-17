@@ -61,12 +61,14 @@ func getNoteData() (string, string) {
 	return title, content
 }
 
-func saveData(data saver) {
-	err = userNote.Save()
+func saveData(data saver) error {
+	err := data.Save()
 	if err != nil {
-		fmt.Println("Saving the note succeeded")
+		fmt.Println("Saving the note failed")
+		return err
 	}
 	fmt.Println("Saving the note succeeded")
+	return nil
 }
 
 func getUserInput(prompt string) string {
