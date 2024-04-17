@@ -10,10 +10,8 @@ import (
 	"example.com/note/todo"
 )
 
-type customString string
-
-func (text customString) log() {
-	fmt.Println(text)
+type saver interface {
+	Save() error
 }
 
 func main() {
