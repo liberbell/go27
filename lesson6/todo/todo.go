@@ -5,23 +5,18 @@ import (
 	"errors"
 	"fmt"
 	"os"
-	"strings"
-	"time"
 )
 
 type Todo struct {
-	Title     string    `json:"title"`
-	Content   string    `json:"content"`
-	CreatedAt time.Time `json:"created_at"`
+	Text string `json:"text"`
 }
 
 func (todo Todo) Display() {
-	fmt.Printf("Your note titled %v has the following content: \n\n%v\n\n", todo.Title, todo.Content)
+	fmt.Printf("Your note titled %v has the following content: \n\n%v\n\n", todo.Text, todo.Content)
 }
 
 func (todo Todo) Save() error {
-	filename := strings.ReplaceAll(todo.Title, " ", "_")
-	filename = strings.ToLower(filename) + ".json"
+	filename := "todo.json"
 	json, err := json.Marshal(todo)
 	if err != nil {
 		return err
@@ -35,6 +30,6 @@ func New(content string) (Todo, error) {
 	}
 
 	return Todo{
-		Content: content,
+		Text: content,
 	}, nil
 }
