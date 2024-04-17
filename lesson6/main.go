@@ -33,6 +33,13 @@ func main() {
 	fmt.Println("Saving the note succeeded")
 }
 
+func getTodoData() string {
+	text := getUserInput("Todo text: ")
+
+	return text
+
+}
+
 func getNoteData() (string, string) {
 	title := getUserInput("Note tilte: ")
 
