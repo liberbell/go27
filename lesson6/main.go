@@ -7,6 +7,7 @@ import (
 	"strings"
 
 	"example.com/note/note"
+	"example.com/note/todo"
 )
 
 type customString string
@@ -17,6 +18,8 @@ func (text customString) log() {
 
 func main() {
 	title, content := getNoteData()
+	todoText := getUserInput("Todo text: ")
+	todo, err := todo.New(todoText)
 
 	userNote, err := note.New(title, content)
 
