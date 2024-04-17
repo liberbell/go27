@@ -12,7 +12,7 @@ type Todo struct {
 }
 
 func (todo Todo) Display() {
-	fmt.Printf("Your note titled %v has the following content: \n\n%v\n\n", todo.Text, todo.Content)
+	fmt.Printf("Your todo is %v: \n", todo.Text)
 }
 
 func (todo Todo) Save() error {
