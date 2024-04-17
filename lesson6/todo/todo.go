@@ -29,14 +29,12 @@ func (todo Todo) Save() error {
 	return os.WriteFile(filename, json, 0644)
 }
 
-func New(title, content string) (Todo, error) {
-	if title == "" {
-		return Note{}, errors.New("Invalid input.")
+func New(content string) (Todo, error) {
+	if content == "" {
+		return Todo{}, errors.New("Invalid input.")
 	}
 
-	return Note{
-		Title:     title,
-		Content:   content,
-		CreatedAt: time.Now(),
+	return Todo{
+		Content: content,
 	}, nil
 }
