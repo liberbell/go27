@@ -15,11 +15,11 @@ type Todo struct {
 	CreatedAt time.Time `json:"created_at"`
 }
 
-func (note Note) Display() {
+func (note Todo) Display() {
 	fmt.Printf("Your note titled %v has the following content: \n\n%v\n\n", note.Title, note.Content)
 }
 
-func (note Note) Save() error {
+func (note Todo) Save() error {
 	filename := strings.ReplaceAll(note.Title, " ", "_")
 	filename = strings.ToLower(filename) + ".json"
 	json, err := json.Marshal(note)
@@ -29,7 +29,7 @@ func (note Note) Save() error {
 	return os.WriteFile(filename, json, 0644)
 }
 
-func New(title, content string) (Note, error) {
+func New(title, content string) (Todo, error) {
 	if title == "" {
 		return Note{}, errors.New("Invalid input.")
 	}
