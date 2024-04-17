@@ -20,6 +20,18 @@ func main() {
 	title, content := getNoteData()
 	todoText := getUserInput("Todo text: ")
 	todo, err := todo.New(todoText)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	todo.Display()
+	err = todo.Save()
+
+	if err != nil {
+		fmt.Println("Saving the note failed: ", err)
+	}
+	fmt.Println("Saving the note succeeded")
 
 	userNote, err := note.New(title, content)
 
