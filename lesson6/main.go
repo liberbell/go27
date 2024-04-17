@@ -40,12 +40,7 @@ func main() {
 	fmt.Println("Saving the note succeeded")
 
 	userNote.Display()
-	err = userNote.Save()
-
-	if err != nil {
-		fmt.Println("Saving the note failed: ", err)
-	}
-	fmt.Println("Saving the note succeeded")
+	saveData(userNote)
 }
 
 func getTodoData() string {
