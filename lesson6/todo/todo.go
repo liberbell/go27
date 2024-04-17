@@ -15,14 +15,14 @@ type Todo struct {
 	CreatedAt time.Time `json:"created_at"`
 }
 
-func (note Todo) Display() {
-	fmt.Printf("Your note titled %v has the following content: \n\n%v\n\n", note.Title, note.Content)
+func (todo Todo) Display() {
+	fmt.Printf("Your note titled %v has the following content: \n\n%v\n\n", todo.Title, todo.Content)
 }
 
-func (note Todo) Save() error {
-	filename := strings.ReplaceAll(note.Title, " ", "_")
+func (todo Todo) Save() error {
+	filename := strings.ReplaceAll(todo.Title, " ", "_")
 	filename = strings.ToLower(filename) + ".json"
-	json, err := json.Marshal(note)
+	json, err := json.Marshal(todo)
 	if err != nil {
 		return err
 	}
