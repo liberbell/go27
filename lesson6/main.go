@@ -52,16 +52,17 @@ func getTodoData() string {
 	text := getUserInput("Todo text: ")
 
 	return text
-
 }
 
 func getNoteData() (string, string) {
 	title := getUserInput("Note tilte: ")
-
 	content := getUserInput("Note content: ")
 
 	return title, content
+}
 
+func saveData(data saver) {
+	data.Save()
 }
 
 func getUserInput(prompt string) string {
