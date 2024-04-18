@@ -53,11 +53,13 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+
+	err = outputData(userNote)
 }
 
-func outputData(data outputtable) {
+func outputData(data outputtable) error {
 	data.Display()
-	saveData(data)
+	return saveData(data)
 }
 
 func getTodoData() string {
