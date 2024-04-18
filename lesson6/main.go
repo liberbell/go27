@@ -65,6 +65,10 @@ func main() {
 	}
 }
 
+func printSomething(value interface{}) {
+	fmt.Println(value)
+}
+
 func outputData(data outputtable) error {
 	data.Display()
 	return saveData(data)
