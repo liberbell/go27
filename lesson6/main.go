@@ -75,6 +75,10 @@ func printSomething(value interface{}) {
 		fmt.Println("Interger: ", value)
 	case float64:
 		fmt.Println("Float: ", value)
+	case string:
+		fmt.Println("String: ", value)
+	default:
+		fmt.Println("Type is ")
 	}
 	fmt.Println(value)
 }
