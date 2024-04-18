@@ -14,6 +14,10 @@ type saver interface {
 	Save() error
 }
 
+type displayer interface {
+	Display()
+}
+
 func main() {
 	title, content := getNoteData()
 	todoText := getUserInput("Todo text: ")
