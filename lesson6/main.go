@@ -46,6 +46,11 @@ func main() {
 	}
 }
 
+func outputData(data saver) {
+	data.Display()
+	saveData(data)
+}
+
 func getTodoData() string {
 	text := getUserInput("Todo text: ")
 
