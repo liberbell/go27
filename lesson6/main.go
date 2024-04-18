@@ -73,6 +73,8 @@ func printSomething(value interface{}) {
 	switch value.(type) {
 	case int:
 		fmt.Println("Interger: ", value)
+	case float64:
+		fmt.Println("Float: ", value)
 	}
 	fmt.Println(value)
 }
