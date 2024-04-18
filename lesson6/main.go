@@ -19,7 +19,7 @@ type displayer interface {
 }
 
 type outputtable interface {
-	Save() error
+	saver
 	Display()
 }
 
@@ -55,7 +55,7 @@ func main() {
 	}
 }
 
-func outputData(data saver) {
+func outputData(data outputtable) {
 	data.Display()
 	saveData(data)
 }
