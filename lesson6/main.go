@@ -18,6 +18,11 @@ type displayer interface {
 	Display()
 }
 
+type outputtable interface {
+	Save() error
+	Display()
+}
+
 func main() {
 	title, content := getNoteData()
 	todoText := getUserInput("Todo text: ")
