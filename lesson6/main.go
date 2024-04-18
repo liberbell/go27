@@ -54,6 +54,11 @@ func main() {
 		return
 	}
 
+	err = outputData(todo)
+	if err != nil {
+		return
+	}
+
 	err = outputData(userNote)
 	if err != nil {
 		return
