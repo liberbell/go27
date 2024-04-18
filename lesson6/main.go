@@ -24,6 +24,10 @@ type outputtable interface {
 }
 
 func main() {
+	printSomething(1)
+	printSomething(1.5)
+	printSomething(true)
+	printSomething("Hello")
 	title, content := getNoteData()
 	todoText := getUserInput("Todo text: ")
 
