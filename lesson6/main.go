@@ -55,6 +55,9 @@ func main() {
 	}
 
 	err = outputData(userNote)
+	if err != nil {
+		return
+	}
 }
 
 func outputData(data outputtable) error {
