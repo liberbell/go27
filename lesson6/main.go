@@ -37,6 +37,8 @@ func main() {
 		return
 	}
 
+	printSomething(todo)
+
 	userNote, err := note.New(title, content)
 
 	if err != nil {
@@ -70,17 +72,18 @@ func main() {
 }
 
 func printSomething(value interface{}) {
-	switch value.(type) {
-	case int:
-		fmt.Println("Interger: ", value)
-	case float64:
-		fmt.Println("Float: ", value)
-	case string:
-		fmt.Println("String: ", value)
-	default:
-		fmt.Println("Type is unknown: ", value)
-	}
-	fmt.Println(value)
+	value.(int)
+	// switch value.(type) {
+	// case int:
+	// 	fmt.Println("Interger: ", value)
+	// case float64:
+	// 	fmt.Println("Float: ", value)
+	// case string:
+	// 	fmt.Println("String: ", value)
+	// default:
+	// 	fmt.Println("Type is unknown: ", value)
+	// }
+	// fmt.Println(value)
 }
 
 func outputData(data outputtable) error {
