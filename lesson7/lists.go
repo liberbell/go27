@@ -13,7 +13,11 @@ func main() {
 	productNames = [4]string{"A book"}
 	prices := [4]float64{10.99, 1.22, 33.4, 45.2}
 	fmt.Println(prices)
+	productNames[2] = "A Carpet"
 	fmt.Println(productNames)
 
 	fmt.Println(prices[3])
+
+	featurePrices := prices[1:3]
+	fmt.Println(featurePrices)
 }
