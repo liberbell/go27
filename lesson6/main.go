@@ -72,7 +72,20 @@ func main() {
 }
 
 func printSomething(value interface{}) {
-	value.(int)
+	intVal, ok := value.(int)
+
+	if ok {
+		fmt.Println("Integer: ", intVal)
+		return
+	}
+
+	floatVal, ok := value.(int)
+
+	if ok {
+		fmt.Println("Integer: ", floatVal)
+		return
+	}
+
 	// switch value.(type) {
 	// case int:
 	// 	fmt.Println("Interger: ", value)
