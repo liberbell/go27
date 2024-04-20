@@ -79,10 +79,10 @@ func printSomething(value interface{}) {
 		return
 	}
 
-	floatVal, ok := value.(int)
+	floatVal, ok := value.(float64)
 
 	if ok {
-		fmt.Println("Integer: ", floatVal)
+		fmt.Println("Float: ", floatVal)
 		return
 	}
 
