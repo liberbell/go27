@@ -78,7 +78,7 @@ func printSomething(value interface{}) {
 	case string:
 		fmt.Println("String: ", value)
 	default:
-		fmt.Println("Type is ")
+		fmt.Println("Type is unknown: ", value)
 	}
 	fmt.Println(value)
 }
