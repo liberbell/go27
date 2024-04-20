@@ -6,12 +6,6 @@ type Product struct {
 	price float64
 }
 
-type TemperatureData struct {
-	day1 float64
-	day2 float64
-	day3 float64
-}
-
 func main() {
-
+	prices := [4]float64{10.99, 1.22, 33.4, 45.2}
 }
