@@ -9,24 +9,32 @@ type Product struct {
 }
 
 func main() {
-	var productNames [4]string
-	productNames = [4]string{"A book"}
-	prices := [4]float64{10.99, 1.22, 33.4, 45.2}
+	prices := []float64{2.99, 10.99}
+	fmt.Println(prices[1])
+	prices[1] = 12.99
+	prices[2] = 21.99
 	fmt.Println(prices)
-	productNames[2] = "A Carpet"
-	fmt.Println(productNames)
-
-	fmt.Println(prices[2])
-
-	featurePrices := prices[1:]
-	featurePrices[0] = 199.99
-	highlightPrices := featurePrices[:1]
-	fmt.Println(featurePrices)
-	fmt.Println(highlightPrices)
-	fmt.Println(prices)
-	fmt.Println(len(highlightPrices), cap(highlightPrices))
-
-	highlightPrices = highlightPrices[:3]
-	fmt.Println(highlightPrices)
-	fmt.Println(len(highlightPrices), cap(highlightPrices))
 }
+
+// func main() {
+// 	var productNames [4]string
+// 	productNames = [4]string{"A book"}
+// 	prices := [4]float64{10.99, 1.22, 33.4, 45.2}
+// 	fmt.Println(prices)
+// 	productNames[2] = "A Carpet"
+// 	fmt.Println(productNames)
+
+// 	fmt.Println(prices[2])
+
+// 	featurePrices := prices[1:]
+// 	featurePrices[0] = 199.99
+// 	highlightPrices := featurePrices[:1]
+// 	fmt.Println(featurePrices)
+// 	fmt.Println(highlightPrices)
+// 	fmt.Println(prices)
+// 	fmt.Println(len(highlightPrices), cap(highlightPrices))
+
+// 	highlightPrices = highlightPrices[:3]
+// 	fmt.Println(highlightPrices)
+// 	fmt.Println(len(highlightPrices), cap(highlightPrices))
+// }
