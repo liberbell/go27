@@ -25,4 +25,8 @@ func main() {
 	fmt.Println(highlightPrices)
 	fmt.Println(prices)
 	fmt.Println(len(highlightPrices), cap(highlightPrices))
+
+	highlightPrices = highlightPrices[:3]
+	fmt.Println(highlightPrices)
+	fmt.Println(len(highlightPrices), cap(highlightPrices))
 }
