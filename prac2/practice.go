@@ -38,4 +38,5 @@ func main() {
 			24.99,
 		},
 	}
+	fmt.Println(products)
 }
