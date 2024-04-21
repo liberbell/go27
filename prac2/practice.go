@@ -39,4 +39,13 @@ func main() {
 		},
 	}
 	fmt.Println(products)
+
+	newProduct := Product{
+		"the third product",
+		"A third product",
+		4.99,
+	}
+
+	products = append(products, newProduct)
+	fmt.Println(products)
 }
