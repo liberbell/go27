@@ -25,4 +25,6 @@ func main() {
 	courceGoals[1] = "Learn all the details"
 	courceGoals = append(courceGoals, "Learn all the basics")
 	fmt.Println(courceGoals)
+
+	products := []Product{Product{"First product", "A First Product", 10.99}}
 }
