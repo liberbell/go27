@@ -10,4 +10,6 @@ func main() {
 	fmt.Println(newhobbies)
 
 	fmt.Println(cap(newhobbies))
+	newhobbies = newhobbies[1:]
+	fmt.Println(newhobbies)
 }
