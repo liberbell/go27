@@ -14,7 +14,8 @@ func main() {
 	prices[1] = 12.99
 	// prices[2] = 21.99
 	updatePrice := append(prices, 21.99)
-	fmt.Println(updatePrice)
+	prices = updatePrice[1:]
+	fmt.Println(prices)
 }
 
 // func main() {
