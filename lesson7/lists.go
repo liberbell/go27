@@ -16,10 +16,12 @@ func main() {
 	productNames[2] = "A Carpet"
 	fmt.Println(productNames)
 
-	fmt.Println(prices[3])
+	fmt.Println(prices[2])
 
 	featurePrices := prices[1:]
+	featurePrices[0] = 199.99
 	highlightPrices := featurePrices[:1]
 	fmt.Println(featurePrices)
 	fmt.Println(highlightPrices)
+	fmt.Println(prices)
 }
