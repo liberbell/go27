@@ -12,8 +12,9 @@ func main() {
 	prices := []float64{2.99, 10.99}
 	fmt.Println(prices[1])
 	prices[1] = 12.99
-	prices[2] = 21.99
-	fmt.Println(prices)
+	// prices[2] = 21.99
+	updatePrice := append(prices, 21.99)
+	fmt.Println(updatePrice)
 }
 
 // func main() {
