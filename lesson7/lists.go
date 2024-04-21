@@ -24,5 +24,5 @@ func main() {
 	fmt.Println(featurePrices)
 	fmt.Println(highlightPrices)
 	fmt.Println(prices)
-	fmt.Println(len(featurePrices), cap(featurePrices))
+	fmt.Println(len(highlightPrices), cap(highlightPrices))
 }
