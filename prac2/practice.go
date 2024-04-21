@@ -15,4 +15,8 @@ func main() {
 
 	courceGoals := []string{"Learn go", "Learn all the basics"}
 	fmt.Println(courceGoals)
+
+	courceGoals[1] = "Learn all the details"
+	courceGoals = append(courceGoals, "Learn all the basics")
+	fmt.Println(courceGoals)
 }
