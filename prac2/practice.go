@@ -2,6 +2,12 @@ package main
 
 import "fmt"
 
+type Product struct {
+	id    string
+	title string
+	price float64
+}
+
 func main() {
 	hobies := []string{"baseball", "movies", "books"}
 	fmt.Println(hobies)
