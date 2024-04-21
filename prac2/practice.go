@@ -10,6 +10,9 @@ func main() {
 	fmt.Println(newhobbies)
 
 	fmt.Println(cap(newhobbies))
-	newhobbies = newhobbies[1:]
+	newhobbies = newhobbies[1:3]
 	fmt.Println(newhobbies)
+
+	courceGoals := []string{"Learn go", "Learn all the basics"}
+	fmt.Println(courceGoals)
 }
