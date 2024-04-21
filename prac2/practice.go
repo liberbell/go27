@@ -32,5 +32,10 @@ func main() {
 			"A First Product",
 			10.99,
 		},
+		Product{
+			"Second product",
+			"A Second Product",
+			24.99,
+		},
 	}
 }
