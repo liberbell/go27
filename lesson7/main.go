@@ -14,4 +14,9 @@ func main() {
 	userName = append(userName, "Sam")
 	userName = append(userName, "Sam")
 	fmt.Println(userName)
+
+	courcesRaitings := map[string]float64{}
+	courcesRaitings["go"] = 4.7
+	courcesRaitings["react"] = 4.8
+	fmt.Println(courcesRaitings)
 }
