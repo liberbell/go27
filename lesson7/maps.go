@@ -1,8 +1,11 @@
 package main
 
+import "fmt"
+
 func main() {
 	website := map[string]string{
-		"Google": "https://google.com",
-		"AWS": "https://aws.com"
+		"Google":              "https://google.com",
+		"Amazon Web Searvice": "https://aws.com",
 	}
+	fmt.Println(website)
 }
