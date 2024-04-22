@@ -28,4 +28,8 @@ func main() {
 	courcesRaitings["node"] = 4.9
 	// fmt.Println(courcesRaitings)
 	courcesRaitings.output()
+
+	for index, value := range userName {
+		fmt.Println(index, value)
+	}
 }
