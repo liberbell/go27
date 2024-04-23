@@ -7,6 +7,8 @@ func main() {
 	dubled := dubleNumbers(&numbers)
 
 	fmt.Println(dubled)
+	doubled2 := double(numbers[])
+	fmt.Println(doubled2)
 }
 
 func dubleNumbers(numbers *[]int) []int {
@@ -15,4 +17,8 @@ func dubleNumbers(numbers *[]int) []int {
 		dNumbers = append(dNumbers, val*2)
 	}
 	return dNumbers
+}
+
+func double(number int) int {
+	return number * 2
 }
