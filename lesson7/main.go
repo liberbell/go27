@@ -34,6 +34,6 @@ func main() {
 	}
 
 	for key, value := range courcesRaitings {
-		fmt.Println(key, value)
+		fmt.Println("key: ", key, "value: ", value)
 	}
 }
