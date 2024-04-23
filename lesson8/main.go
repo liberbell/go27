@@ -9,7 +9,7 @@ func main() {
 	fmt.Println(dubled)
 }
 
-func dubleNumbers(numbers *[]int) int {
+func dubleNumbers(numbers *[]int) []int {
 	dNumbers := []int{}
 	for _, val := range *numbers {
 		dNumbers = append(dNumbers, val*2)
