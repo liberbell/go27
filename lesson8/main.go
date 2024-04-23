@@ -4,7 +4,9 @@ func main() {
 	numbers := []int{1, 2, 3, 4, 5}
 }
 
-func dubleNumbers(number *[]int) int {
+func dubleNumbers(numbers *[]int) int {
 	dNumbers := []int{}
-	for index, vl := range *number
+	for index, vl := range *numbers {
+		append(dNumbers, val*2)
+	}
 }
