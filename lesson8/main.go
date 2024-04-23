@@ -6,7 +6,8 @@ func main() {
 
 func dubleNumbers(numbers *[]int) int {
 	dNumbers := []int{}
-	for index, vl := range *numbers {
-		append(dNumbers, val*2)
+	for _, vl := range *numbers {
+		dNumbers = (dNumbers, val*2)
 	}
+	return dNumbers[]
 }
