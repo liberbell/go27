@@ -11,8 +11,8 @@ func main() {
 
 func dubleNumbers(numbers *[]int) int {
 	dNumbers := []int{}
-	for _, vl := range *numbers {
-		dNumbers = (dNumbers, val*2)
+	for _, val := range *numbers {
+		dNumbers = append(dNumbers, val*2)
 	}
-	return dNumbers[]
+	return dNumbers
 }
