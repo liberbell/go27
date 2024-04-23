@@ -1,7 +1,12 @@
 package main
 
+import "fmt"
+
 func main() {
 	numbers := []int{1, 2, 3, 4, 5}
+	dubled := dubleNumbers(&numbers)
+
+	fmt.Println(dubled)
 }
 
 func dubleNumbers(numbers *[]int) int {
