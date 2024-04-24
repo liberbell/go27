@@ -6,6 +6,8 @@ import (
 
 type transformFn func(int) int
 
+type anotherFn func(int, []string, map[string][]int)
+
 func main() {
 	numbers := []int{1, 2, 3, 4, 5}
 	doubled := transformNumbers(&numbers, double)
