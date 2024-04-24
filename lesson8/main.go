@@ -1,12 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	numbers := []int{1, 2, 3, 4, 5}
 	dubled := transformNumbers(&numbers, double)
+	triple := transformNumbers(&numbers, triple)
 
-	fmt.Println(dubled)
+	fmt.Println(dubled, triple)
 	// doubled2 := double(numbers[])
 	// fmt.Println(doubled2)
 }
