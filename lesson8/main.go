@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
+type transformFn func(int) int
+
 func main() {
 	numbers := []int{1, 2, 3, 4, 5}
 	doubled := transformNumbers(&numbers, double)
@@ -22,7 +24,7 @@ func dubleNumbers(numbers *[]int) []int {
 	return dNumbers
 }
 
-func transformNumbers(numbers *[]int, transform func(int) int) []int {
+func transformNumbers(numbers *[]int, transform transformFn) []int {
 	dNumbers := []int{}
 	for _, val := range *numbers {
 		dNumbers = append(dNumbers, transform(val))
