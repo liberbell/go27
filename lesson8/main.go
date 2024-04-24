@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"golang.org/x/text/number"
 )
 
 type transformFn func(int) int
@@ -32,6 +34,12 @@ func transformNumbers(numbers *[]int, transform transformFn) []int {
 		dNumbers = append(dNumbers, transform(val))
 	}
 	return dNumbers
+}
+
+func getTransformerFunction(numbers, *[]int) transformFn {
+	if (*numbers[0]) ==0
+	return double
+
 }
 
 func double(number int) int {
