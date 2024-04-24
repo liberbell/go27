@@ -6,10 +6,10 @@ import (
 
 func main() {
 	numbers := []int{1, 2, 3, 4, 5}
-	dubled := transformNumbers(&numbers, double)
-	triple := transformNumbers(&numbers, triple)
+	doubled := transformNumbers(&numbers, double)
+	tripled := transformNumbers(&numbers, triple)
 
-	fmt.Println(dubled, triple)
+	fmt.Println(doubled, tripled)
 	// doubled2 := double(numbers[])
 	// fmt.Println(doubled2)
 }
