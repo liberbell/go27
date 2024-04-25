@@ -10,7 +10,7 @@ type anotherFn func(int, []string, map[string][]int) ([]int, string)
 
 func main() {
 	numbers := []int{1, 2, 3, 4, 5}
-	more_numbers := []int{6, 1, 2, 3, 4}
+	// more_numbers := []int{6, 1, 2, 3, 4}
 	// doubled := transformNumbers(&numbers, double)
 	double := createTransformer(2)
 	// tripled := transformNumbers(&numbers, triple)
@@ -23,19 +23,19 @@ func main() {
 	// doubled2 := double(numbers[])
 	// fmt.Println(doubled2)
 
-	transformerFn1 := getTransformerFunction(&numbers)
-	transformerFn2 := getTransformerFunction(&more_numbers)
+	// transformerFn1 := getTransformerFunction(&numbers)
+	// transformerFn2 := getTransformerFunction(&more_numbers)
 
-	transformedNumbers := transformNumbers(&numbers, transformerFn1)
-	more_transformedNumbers := transformNumbers(&more_numbers, transformerFn2)
+	// transformedNumbers := transformNumbers(&numbers, transformerFn1)
+	// more_transformedNumbers := transformNumbers(&more_numbers, transformerFn2)
 
-	fmt.Println(transformedNumbers)
-	fmt.Println(more_transformedNumbers)
+	// fmt.Println(transformedNumbers)
+	// fmt.Println(more_transformedNumbers)
 
-	transformed := transformNumbers(&numbers, func(number int) int {
-		return number * 2
-	})
-	fmt.Println(transformed)
+	// transformed := transformNumbers(&numbers, func(number int) int {
+	// 	return number * 2
+	// })
+	// fmt.Println(transformed)
 
 }
 
