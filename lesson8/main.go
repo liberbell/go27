@@ -23,6 +23,9 @@ func main() {
 
 	transformNumbers := transformNumbers(&numbers, transformFn1)
 	more_transformNumbers := transformNumbers(&more_numbers, transformFn2)
+
+	fmt.Println(transformNumbers)
+	fmt.Println(more_transformNumbers)
 }
 
 func dubleNumbers(numbers *[]int) []int {
