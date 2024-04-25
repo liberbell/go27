@@ -49,8 +49,10 @@ func transformNumbers(numbers *[]int, transform transformFn) []int {
 	return dNumbers
 }
 
-func createTransformer() func(int) int {
-	return func(number int) int {}
+func createTransformer(factor int) func(int) int {
+	return func(number int) int {
+		return number * factor
+	}
 }
 
 func getTransformerFunction(numbers *[]int) transformFn {
