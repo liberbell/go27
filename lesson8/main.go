@@ -26,6 +26,10 @@ func main() {
 
 	fmt.Println(transformedNumbers)
 	fmt.Println(more_transformedNumbers)
+
+	transformed := transformNumbers(&numbers, func(number int) int {
+		return number * 2
+	})
 }
 
 func dubleNumbers(numbers *[]int) []int {
