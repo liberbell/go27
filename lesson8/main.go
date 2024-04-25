@@ -30,6 +30,7 @@ func main() {
 	transformed := transformNumbers(&numbers, func(number int) int {
 		return number * 2
 	})
+	fmt.Println(transformed)
 }
 
 func dubleNumbers(numbers *[]int) []int {
