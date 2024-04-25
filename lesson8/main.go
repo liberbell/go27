@@ -19,6 +19,10 @@ func main() {
 	// fmt.Println(doubled2)
 
 	transformFn1 := getTransformerFunction(&numbers)
+	transformFn2 := getTransformerFunction(&more_numbers)
+
+	transformNumbers := transformNumbers(&numbers, transformFn1)
+	more_transformNumbers := transformNumbers(&more_numbers, transformFn2)
 }
 
 func dubleNumbers(numbers *[]int) []int {
