@@ -18,14 +18,14 @@ func main() {
 	// doubled2 := double(numbers[])
 	// fmt.Println(doubled2)
 
-	transformFn1 := getTransformerFunction(&numbers)
-	transformFn2 := getTransformerFunction(&more_numbers)
+	transformerFn1 := getTransformerFunction(&numbers)
+	transformerFn2 := getTransformerFunction(&more_numbers)
 
-	transformNumbers := transformNumbers(&numbers, transformFn1)
-	more_transformNumbers := transformNumbers(&more_numbers, transformFn2)
+	transformedNumbers := transformNumbers(&numbers, transformerFn1)
+	more_transformedNumbers := transformNumbers(&more_numbers, transformerFn2)
 
-	fmt.Println(transformNumbers)
-	fmt.Println(more_transformNumbers)
+	fmt.Println(transformedNumbers)
+	fmt.Println(more_transformedNumbers)
 }
 
 func dubleNumbers(numbers *[]int) []int {
