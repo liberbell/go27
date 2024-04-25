@@ -11,8 +11,10 @@ type anotherFn func(int, []string, map[string][]int) ([]int, string)
 func main() {
 	numbers := []int{1, 2, 3, 4, 5}
 	more_numbers := []int{6, 1, 2, 3, 4}
-	doubled := transformNumbers(&numbers, double)
-	tripled := transformNumbers(&numbers, triple)
+	// doubled := transformNumbers(&numbers, double)
+	doubled := createTransformer(2)
+	// tripled := transformNumbers(&numbers, triple)
+	tripled := createTransformer(3)
 
 	fmt.Println(doubled, tripled)
 	// doubled2 := double(numbers[])
@@ -31,6 +33,7 @@ func main() {
 		return number * 2
 	})
 	fmt.Println(transformed)
+
 }
 
 func dubleNumbers(numbers *[]int) []int {
