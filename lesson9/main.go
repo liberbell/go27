@@ -11,7 +11,7 @@ func factorial(number int) int {
 	if number == 0 {
 		return 1
 	}
-	return number * factorial((number - 1))
+	return number * factorial(number-1)
 	// result := 1
 
 	// for i := 1; i <= number; i++ {
@@ -19,4 +19,8 @@ func factorial(number int) int {
 	// }
 
 	// return result
+}
+
+func sumup(number []int) int {
+	sum := 0
 }
