@@ -21,6 +21,11 @@ func factorial(number int) int {
 	// return result
 }
 
-func sumup(number []int) int {
+func sumup(numbers []int) int {
 	sum := 0
+
+	for _, val := range numbers {
+		sum += val
+	}
+	return sum
 }
