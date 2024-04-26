@@ -5,8 +5,9 @@ import "fmt"
 func main() {
 	// fact := factorial(5)
 	// fmt.Println(fact)
-	numbers := []int{1, 10, 15}
-	sum := sumup(numbers)
+	// numbers := []int{1, 10, 15}
+	// sum := sumup(numbers
+	sum := sumup(1, 10, 15)
 	fmt.Println(sum)
 }
 
@@ -24,7 +25,7 @@ func factorial(number int) int {
 	// return result
 }
 
-func sumup(numbers []int) int {
+func sumup(numbers ...int) int {
 	sum := 0
 
 	for _, val := range numbers {
