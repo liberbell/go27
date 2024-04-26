@@ -3,8 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	fact := factorial(5)
-	fmt.Println(fact)
+	// fact := factorial(5)
+	// fmt.Println(fact)
+	numbers := []int{1, 10, 15}
+	sum := sumup(numbers)
+	fmt.Println(sum)
 }
 
 func factorial(number int) int {
