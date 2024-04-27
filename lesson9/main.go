@@ -8,8 +8,10 @@ func main() {
 	numbers := []int{1, 10, 15}
 	// sum := sumup(numbers
 	sum := sumup(1, 10, 15, 40, -5)
+	anothersum := sumup(1, numbers...)
 
 	fmt.Println(sum)
+	fmt.Println(anothersum)
 }
 
 func factorial(number int) int {
