@@ -36,7 +36,8 @@ func (job TaxIncludedPriceJob) LoadData() {
 	for lineIndex, line := range lines {
 		floatprice, err := strconv.ParseFloat(line, 64)
 		if err != nil {
-			fmt.Println(err)
+			file.Close()
+			fmt.Println("Convert to float failed:", err)
 		}
 	}
 }
