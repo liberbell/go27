@@ -1,6 +1,7 @@
 package prices
 
 import (
+	"bufio"
 	"fmt"
 	"os"
 )
@@ -15,6 +16,13 @@ func (job TaxIncludedPriceJob) LoadData() {
 	file, err := os.Open("prices.txt")
 	if err != nil {
 		fmt.Println("An error occureed: ", err)
+		return
+	}
+	scanner := bufio.NewScanner(file)
+	var lines []string
+
+	if scanner.Scan() {
+		lines = append(lines, scanner.Text())
 	}
 }
 
