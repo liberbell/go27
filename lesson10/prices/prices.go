@@ -24,6 +24,12 @@ func (job TaxIncludedPriceJob) LoadData() {
 	if scanner.Scan() {
 		lines = append(lines, scanner.Text())
 	}
+	err = scanner.Err()
+	if err != nil {
+		fmt.Println("Reading content file: ", err)
+		file.Close()
+		return
+	}
 }
 
 func (job TaxIncludedPriceJob) Process() {
