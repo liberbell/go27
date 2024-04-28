@@ -1,11 +1,21 @@
 package prices
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 type TaxIncludedPriceJob struct {
 	TaxRate           float64
 	InputPrices       []float64
 	TaxIncludedPrices map[string]float64
+}
+
+func (job TaxIncludedPriceJob) LoadData() {
+	file, err := os.Open("prices.txt")
+	if err != nil {
+		fmt.Println(err)
+	}
 }
 
 func (job TaxIncludedPriceJob) Process() {
