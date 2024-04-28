@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	_ "example.com/price-calculator/prices"
+)
 
 func main() {
 	prices := []float64{10, 20, 30}
