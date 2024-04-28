@@ -34,7 +34,10 @@ func (job TaxIncludedPriceJob) LoadData() {
 	prices := make([]float64, len(lines))
 
 	for lineIndex, line := range lines {
-		strconv.ParseFloat(line)
+		floatprice, err := strconv.ParseFloat(line, 64)
+		if err != nil {
+			fmt.Println(err)
+		}
 	}
 }
 
