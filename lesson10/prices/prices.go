@@ -41,9 +41,11 @@ func (job TaxIncludedPriceJob) LoadData() {
 		}
 		prices[lineIndex] = floatPrice
 	}
+	job.InputPrices = prices
 }
 
-func (job TaxIncludedPriceJob) Process() {
+func (job *TaxIncludedPriceJob) Process() {
+	job.LoadData()
 	result := make(map[string]float64)
 
 	for _, price := range job.InputPrices {
