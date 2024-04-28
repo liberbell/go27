@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 )
 
 type TaxIncludedPriceJob struct {
@@ -29,6 +30,11 @@ func (job TaxIncludedPriceJob) LoadData() {
 		fmt.Println("Reading content file: ", err)
 		file.Close()
 		return
+	}
+	prices := make([]float64, len(lines))
+
+	for lineIndex, line := range lines {
+		strconv.ParseFloat(line)
 	}
 }
 
