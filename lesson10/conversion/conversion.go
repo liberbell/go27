@@ -1,18 +1,19 @@
 package conversion
 
 import (
-	"fmt"
+	"errors"
 	"strconv"
 )
 
 func StringToFloat(strings []string) ([]float64, error) {
-	for stringIndex, string := range strings {
-		floatPrice, err := strconv.ParseFloat(string, 64)
+	var floats []float64
+
+	for stringIndex, stringVal := range strings {
+		floatPrice, err := strconv.ParseFloat(stringVal, 64)
 		if err != nil {
-			file.Close()
-			fmt.Println("Convert to float failed:", err)
+			return nil, errors.New("Failed to convert string to float")
 		}
-		prices[lineIndex] = floatPrice
+
 	}
 	job.InputPrices = prices
 }
