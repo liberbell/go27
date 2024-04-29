@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+
+	"example.com/price-calculator/conversion"
 )
 
 type TaxIncludedPriceJob struct {
@@ -31,7 +33,8 @@ func (job TaxIncludedPriceJob) LoadData() {
 		file.Close()
 		return
 	}
-	prices := make([]float64, len(lines))
+	// prices := make([]float64, len(lines))
+	prices := conversion.StringToFloat()
 
 	for lineIndex, line := range lines {
 		floatPrice, err := strconv.ParseFloat(line, 64)
