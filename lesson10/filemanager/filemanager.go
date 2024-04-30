@@ -10,6 +10,7 @@ import (
 func ReadLines(path string) ([]string, error) {
 	file, err := os.Open(path)
 	if err != nil {
+		file.Close()
 		fmt.Println("An error occureed: ", err)
 		return nil, errors.New("Failed to open file")
 	}
@@ -21,10 +22,8 @@ func ReadLines(path string) ([]string, error) {
 	}
 	err = scanner.Err()
 	if err != nil {
-		fmt.Println("Reading content file: ", err)
-		file.Close()
-		return
+		return nil, errors.New("Failed to read line in file")
 	}
 	file.Close()
-	return lines
+	return lines, nil
 }
