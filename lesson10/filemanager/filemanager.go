@@ -29,6 +29,10 @@ func ReadLines(path string) ([]string, error) {
 	return lines, nil
 }
 
-func WriteJSON(path string, data interface{}) {
-	os.Create()
+func WriteJSON(path string, data interface{}) error {
+	file, err := os.Create(path)
+	if err != nil {
+		return errors.New("Failed to create file")
+	}
+
 }
