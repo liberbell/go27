@@ -22,6 +22,7 @@ func ReadLines(path string) ([]string, error) {
 	}
 	err = scanner.Err()
 	if err != nil {
+		file.Close()
 		return nil, errors.New("Failed to read line in file")
 	}
 	file.Close()
