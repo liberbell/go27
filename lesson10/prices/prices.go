@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"example.com/price-calculator/conversion"
+	"example.com/price-calculator/filemanager"
 )
 
 type TaxIncludedPriceJob struct {
@@ -13,6 +14,7 @@ type TaxIncludedPriceJob struct {
 }
 
 func (job TaxIncludedPriceJob) LoadData() {
+	lines, err := filemanager.ReadLines("prices.txt")
 
 	// prices := make([]float64, len(lines))
 	prices, err := conversion.StringToFloat(lines)
