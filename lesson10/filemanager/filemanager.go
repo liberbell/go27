@@ -28,3 +28,7 @@ func ReadLines(path string) ([]string, error) {
 	file.Close()
 	return lines, nil
 }
+
+func WriteJSON(path string, data interface{}) {
+	os.Create()
+}
