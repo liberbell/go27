@@ -6,8 +6,8 @@ import (
 	"os"
 )
 
-func ReadLines() {
-	file, err := os.Open("prices.txt")
+func ReadLines(path string) ([]string, error) {
+	file, err := os.Open(path)
 	if err != nil {
 		fmt.Println("An error occureed: ", err)
 		return
@@ -24,4 +24,6 @@ func ReadLines() {
 		file.Close()
 		return
 	}
+	file.Close()
+	return lines
 }
