@@ -41,7 +41,7 @@ func (job *TaxIncludedPriceJob) Process() {
 	}
 	job.TaxIncludedPrices = result
 
-	filemanager.WriteJSON("result.json", job)
+	filemanager.WriteJSON(fmt.Sprintf("result_%v.json", job.TaxRate), job)
 
 }
 
