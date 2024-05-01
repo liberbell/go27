@@ -2,6 +2,7 @@ package filemanager
 
 import (
 	"bufio"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"os"
@@ -34,5 +35,6 @@ func WriteJSON(path string, data interface{}) error {
 	if err != nil {
 		return errors.New("Failed to create file")
 	}
-
+	encoder := json.NewEncoder(file)
+	encoder.
 }
