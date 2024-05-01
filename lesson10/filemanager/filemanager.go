@@ -8,6 +8,11 @@ import (
 	"os"
 )
 
+type FileManager struct {
+	InputFilePath  string
+	OutputFilePath string
+}
+
 func ReadLines(path string) ([]string, error) {
 	file, err := os.Open(path)
 	if err != nil {
