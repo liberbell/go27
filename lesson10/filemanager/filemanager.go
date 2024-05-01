@@ -36,5 +36,8 @@ func WriteJSON(path string, data interface{}) error {
 		return errors.New("Failed to create file")
 	}
 	encoder := json.NewEncoder(file)
-	encoder.
+	err = encoder.Encode(data)
+	if err != nil {
+		return errors.New("Failed to convert data to JSON")
+	}
 }
