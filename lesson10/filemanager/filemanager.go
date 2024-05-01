@@ -38,6 +38,9 @@ func WriteJSON(path string, data interface{}) error {
 	encoder := json.NewEncoder(file)
 	err = encoder.Encode(data)
 	if err != nil {
+		file.Close()
 		return errors.New("Failed to convert data to JSON")
 	}
+	file.Close()
+	return nil
 }
