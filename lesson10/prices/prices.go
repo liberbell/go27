@@ -15,7 +15,7 @@ type TaxIncludedPriceJob struct {
 }
 
 func (job TaxIncludedPriceJob) LoadData() {
-	lines, err := filemanager.ReadLines("prices.txt")
+	lines, err := job.IOManager.ReadLines()
 	if err != nil {
 		fmt.Println("Convert to float failed:", err)
 		return
