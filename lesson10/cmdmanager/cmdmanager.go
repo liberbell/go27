@@ -3,10 +3,10 @@ package cmdmanager
 type CMDmanager struct {
 }
 
-func (fm FileManager) ReadLines() ([]string, error) {
+func (cmd CMDmanager) ReadLines() ([]string, error) {
 
 }
 
-func (fm FileManager) WriteResult(data interface{}) error {
+func (cmd CMDmanager) WriteResult(data interface{}) error {
 
 }
