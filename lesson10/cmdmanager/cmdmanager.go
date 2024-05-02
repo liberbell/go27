@@ -20,7 +20,7 @@ func (cmd CMDmanager) ReadLines() ([]string, error) {
 		}
 		prices = append(prices, price)
 	}
-	return prices
+	return prices, nil
 }
 
 func (cmd CMDmanager) WriteResult(data interface{}) error {
