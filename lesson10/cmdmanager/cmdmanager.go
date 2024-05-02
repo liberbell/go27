@@ -13,9 +13,9 @@ func (cmd CMDmanager) ReadLines() ([]string, error) {
 	for {
 		var price string
 		fmt.Print("Price: ")
-		fmt.Scan()
+		fmt.Scan(&price)
 
-		if price == 0 {
+		if price == "0" {
 			break
 		}
 		prices = append(prices, price)
