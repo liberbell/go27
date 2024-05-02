@@ -27,3 +27,7 @@ func (cmd CMDmanager) WriteResult(data interface{}) error {
 	fmt.Println(data)
 	return nil
 }
+
+func New() CMDmanager {
+	return CMDmanager{}
+}
