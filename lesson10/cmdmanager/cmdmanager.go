@@ -14,8 +14,13 @@ func (cmd CMDmanager) ReadLines() ([]string, error) {
 		var price string
 		fmt.Print("Price: ")
 		fmt.Scan()
+
+		if price == 0 {
+			break
+		}
 		prices = append(prices, price)
 	}
+	return prices
 }
 
 func (cmd CMDmanager) WriteResult(data interface{}) error {
