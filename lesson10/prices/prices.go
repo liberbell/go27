@@ -30,7 +30,11 @@ func (job TaxIncludedPriceJob) LoadData() error {
 	job.InputPrices = prices
 }
 
-func (job *TaxIncludedPriceJob) Process() {
+func (job *TaxIncludedPriceJob) Process() error {
+	err := job.LoadData()
+	if err != nil {
+		return err
+	}
 	job.LoadData()
 	result := make(map[string]string)
 
