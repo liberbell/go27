@@ -28,6 +28,7 @@ func (job TaxIncludedPriceJob) LoadData() error {
 	}
 
 	job.InputPrices = prices
+	return job.IOManager.WriteResult(job)
 }
 
 func (job *TaxIncludedPriceJob) Process() error {
