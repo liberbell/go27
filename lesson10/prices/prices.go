@@ -45,7 +45,7 @@ func (job *TaxIncludedPriceJob) Process() error {
 	}
 	job.TaxIncludedPrices = result
 
-	job.IOManager.WriteResult(job)
+	return job.IOManager.WriteResult(job)
 
 }
 
