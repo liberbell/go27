@@ -10,7 +10,7 @@ import (
 
 type IOManager interface {
 	ReadLines() ([]string, error)
-	WriteResult(data interface{})
+	WriteResult(data interface{}) error
 }
 
 func main() {
