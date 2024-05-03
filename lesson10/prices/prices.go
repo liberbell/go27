@@ -14,19 +14,17 @@ type TaxIncludedPriceJob struct {
 	TaxIncludedPrices map[string]string   `json:"tax_included_prices"`
 }
 
-func (job TaxIncludedPriceJob) LoadData() {
+func (job TaxIncludedPriceJob) LoadData() error {
 	lines, err := job.IOManager.ReadLines()
 	if err != nil {
-		fmt.Println("Convert to float failed:", err)
-		return
+		return err
 	}
 
 	// prices := make([]float64, len(lines))
 	prices, err := conversion.StringToFloat(lines)
 
 	if err != nil {
-		fmt.Println("Convert to float failed:", err)
-		return
+		return err
 	}
 
 	job.InputPrices = prices
