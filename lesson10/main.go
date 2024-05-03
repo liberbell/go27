@@ -8,11 +8,6 @@ import (
 	"example.com/price-calculator/prices"
 )
 
-type IOManager interface {
-	ReadLines() ([]string, error)
-	WriteResult(data interface{}) error
-}
-
 func main() {
 	taxRates := []float64{0, 0.07, 0.1, 0.15}
 
