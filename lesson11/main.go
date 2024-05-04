@@ -5,8 +5,9 @@ import (
 	"time"
 )
 
-func greet(phrase string) {
+func greet(phrase string, doneChan chan bool) {
 	fmt.Println("Hello ", phrase)
+	doneChan <- true
 }
 
 func slowGreet(phrase string, doneChan chan bool) {
@@ -16,10 +17,11 @@ func slowGreet(phrase string, doneChan chan bool) {
 }
 
 func main() {
-	// greet("Nice to meet you")
-	// greet("How are you")
 	done := make(chan bool)
+	greet("Nice to meet you", done)
+	greet("How are you", done)
+
 	go slowGreet("How ... are ... you ...", done)
-	// greet("I home you`re liking the course")
+	greet("I home you`re liking the course", done)
 	<-done
 }
