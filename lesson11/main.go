@@ -1,8 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func greet(phrase string) {
+	fmt.Println("Hello ", phrase)
+}
+
+func slowGreet(phrase string) {
+	time.Sleep(3 * time.Millisecond)
 	fmt.Println("Hello ", phrase)
 }
 
