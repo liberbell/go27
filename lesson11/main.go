@@ -14,6 +14,7 @@ func slowGreet(phrase string, doneChan chan bool) {
 	time.Sleep(3 * time.Second)
 	fmt.Println("Hello ", phrase)
 	doneChan <- true
+	close(doneChan)
 }
 
 func main() {
