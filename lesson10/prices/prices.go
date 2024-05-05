@@ -31,7 +31,7 @@ func (job TaxIncludedPriceJob) LoadData() error {
 	return job.IOManager.WriteResult(job)
 }
 
-func (job *TaxIncludedPriceJob) Process() error {
+func (job *TaxIncludedPriceJob) Process(chan bool) error {
 	err := job.LoadData()
 	if err != nil {
 		return err
