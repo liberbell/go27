@@ -32,7 +32,7 @@ func main() {
 	// for _, done := range dones {
 	// 	<-done
 	// }
-	for doneChan := range done {
-		fmt.Println(doneChan)
+	for range done {
+		// fmt.Println(doneChan)
 	}
 }
