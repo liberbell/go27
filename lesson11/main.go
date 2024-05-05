@@ -24,10 +24,12 @@ func main() {
 	go greet("Nice to meet you", dones[0])
 	dones[1] = make(chan bool)
 	go greet("How are you", dones[1])
-	go slowGreet("How ... are ... you ...", done)
-	go greet("I home you`re liking the course", done)
-	<-done
-	<-done
-	<-done
-	<-done
+	dones[2] = make(chan bool)
+	go slowGreet("How ... are ... you ...", dones[2])
+	dones[3] = make(chan bool)
+	go greet("I home you`re liking the course", dones[3])
+
+	for _, done := range dones {
+		<-done
+	}
 }
