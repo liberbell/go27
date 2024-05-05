@@ -17,6 +17,7 @@ func slowGreet(phrase string, doneChan chan bool) {
 }
 
 func main() {
+	dones := make([]chan bool, 4)
 	done := make(chan bool)
 	go greet("Nice to meet you", done)
 	go greet("How are you", done)
