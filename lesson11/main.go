@@ -23,4 +23,7 @@ func main() {
 	go slowGreet("How ... are ... you ...", done)
 	go greet("I home you`re liking the course", done)
 	<-done
+	<-done
+	<-done
+	<-done
 }
