@@ -21,5 +21,6 @@ func getEvents(context *gin.Context) {
 }
 
 func createEvents(context *gin.Context) {
-
+	var event models.Event
+	context.ShouldBindJSON(&event)
 }
