@@ -1,7 +1,6 @@
 package prices
 
 import (
-	"errors"
 	"fmt"
 
 	"example.com/price-calculator/conversion"
@@ -34,7 +33,7 @@ func (job TaxIncludedPriceJob) LoadData() error {
 
 func (job *TaxIncludedPriceJob) Process(doneChan chan bool, errorChan chan error) {
 	err := job.LoadData()
-	errorChan <- errors.New("An error")
+	// errorChan <- errors.New("An error")
 	if err != nil {
 		// return err
 		errorChan <- err
