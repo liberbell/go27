@@ -37,12 +37,4 @@ func main() {
 		}
 	}
 
-	for _, errorChan := range errorChans {
-		<-errorChan
-	}
-
-	for _, donChan := range doneChans {
-		<-donChan
-	}
-
 }
