@@ -1,6 +1,10 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
 	server := gin.Default()
@@ -9,5 +13,5 @@ func main() {
 }
 
 func getEvents(context *gin.Context) {
-
+	context.JSON(http.StatusOK, gin.H{"message": "Hello"})
 }
