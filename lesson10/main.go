@@ -24,4 +24,8 @@ func main() {
 		// }
 	}
 
+	for _, donChan := range doneChans {
+		<-donChan
+	}
+
 }
