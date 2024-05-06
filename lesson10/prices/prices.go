@@ -1,11 +1,11 @@
 package prices
 
 import (
+	"errors"
 	"fmt"
 
 	"example.com/price-calculator/conversion"
 	"example.com/price-calculator/iomanager"
-	"github.com/pkg/errors"
 )
 
 type TaxIncludedPriceJob struct {
