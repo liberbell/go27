@@ -26,6 +26,13 @@ func main() {
 		// }
 	}
 
+	for index, _ := range taxRates {
+		select {
+		case err := <-errorChan:
+
+		}
+	}
+
 	for _, errorChan := range errorChans {
 		<-errorChan
 	}
