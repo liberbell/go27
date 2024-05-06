@@ -21,18 +21,21 @@ func (fm FileManager) ReadLines() ([]string, error) {
 		fmt.Println("An error occureed: ", err)
 		return nil, errors.New("Failed to open file")
 	}
+	defer file.Close()
+
 	scanner := bufio.NewScanner(file)
 	var lines []string
 
 	if scanner.Scan() {
 		lines = append(lines, scanner.Text())
 	}
+
 	err = scanner.Err()
 	if err != nil {
-		file.Close()
+		// file.Close()
 		return nil, errors.New("Failed to read line in file")
 	}
-	file.Close()
+	// file.Close()
 	return lines, nil
 }
 
