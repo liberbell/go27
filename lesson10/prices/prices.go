@@ -5,6 +5,7 @@ import (
 
 	"example.com/price-calculator/conversion"
 	"example.com/price-calculator/iomanager"
+	"github.com/pkg/errors"
 )
 
 type TaxIncludedPriceJob struct {
@@ -33,6 +34,7 @@ func (job TaxIncludedPriceJob) LoadData() error {
 
 func (job *TaxIncludedPriceJob) Process(doneChan chan bool, errorChan chan error) {
 	err := job.LoadData()
+	errorChan <- errors.New("An error")
 	if err != nil {
 		// return err
 		errorChan <- err
