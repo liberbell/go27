@@ -4,7 +4,7 @@ import "time"
 
 type Event struct {
 	ID          int
-	Name        string
+	Name        string `binding:"required"`
 	Description string
 	Location    string
 	DateTime    time.Time
