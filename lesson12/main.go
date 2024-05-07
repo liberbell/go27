@@ -22,5 +22,9 @@ func getEvents(context *gin.Context) {
 
 func createEvents(context *gin.Context) {
 	var event models.Event
-	context.ShouldBindJSON(&event)
+	err := context.ShouldBindJSON(&event)
+
+	if err != nil {
+		context.JSON(http.StatusBadRequest, gin.H{"message": err})
+	}
 }
