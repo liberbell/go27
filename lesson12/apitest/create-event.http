@@ -1,0 +1,6 @@
+POST localhost:8080/events
+Content-Type: application/json
+
+{
+    ""
+}
