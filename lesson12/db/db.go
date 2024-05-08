@@ -13,4 +13,6 @@ func InitDB() {
 	if err != nil {
 		panic("Could not connect to database")
 	}
+	DB.SetMaxOpenConns(10)
+	DB.SetMaxIdleConns(5)
 }
