@@ -1,6 +1,10 @@
 package models
 
-import "time"
+import (
+	"time"
+
+	"example.com/rest-API/db"
+)
 
 type Event struct {
 	ID          int
@@ -16,7 +20,8 @@ var events = []Event{}
 func (e Event) Save() {
 	query := `
 	INSERT INTO events(name, description, location, dateTime, user_id)
-	VALUES ("Test", )`
+	VALUES (?, ?, ?, ?, ?)`
+	stmt, err := db.DB.Prepare(query)
 	events = append(events, e)
 }
 
