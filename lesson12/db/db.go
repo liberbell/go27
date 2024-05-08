@@ -16,3 +16,13 @@ func InitDB() {
 	DB.SetMaxOpenConns(10)
 	DB.SetMaxIdleConns(5)
 }
+
+func createTables() {
+	createEventTable = `
+	CREATE TABLE IF NOT EXISTS events (
+		id INTEGER PRIMARY KEY AUTOINCREMENT
+		name TEXT NOT NULL
+		description TEXT NOT NULL
+	)
+	`
+}
