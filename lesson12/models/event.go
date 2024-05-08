@@ -17,11 +17,14 @@ type Event struct {
 
 var events = []Event{}
 
-func (e Event) Save() {
+func (e Event) Save() error {
 	query := `
 	INSERT INTO events(name, description, location, dateTime, user_id)
 	VALUES (?, ?, ?, ?, ?)`
 	stmt, err := db.DB.Prepare(query)
+	if err != nil {
+		return err
+	}
 	events = append(events, e)
 }
 
