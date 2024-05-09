@@ -1,6 +1,7 @@
 package models
 
 import (
+	"fmt"
 	"time"
 
 	"example.com/rest-API/db"
@@ -37,5 +38,10 @@ func (e Event) Save() error {
 }
 
 func GetAllEvent() []Event {
+	query := `SELECT * FROM events`
+	rows, err := db.DB.Query(query)
+	if err != nil {
+		fmt.Println("Error getting events: ", err)
+	}
 	return events
 }
