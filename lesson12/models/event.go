@@ -37,11 +37,12 @@ func (e Event) Save() error {
 	return err
 }
 
-func GetAllEvent() []Event {
+func GetAllEvent() ([]Event, error) {
 	query := `SELECT * FROM events`
 	rows, err := db.DB.Query(query)
 	if err != nil {
 		fmt.Println("Error getting events: ", err)
+		return nil, err
 	}
-	return events
+	return events, nil
 }
