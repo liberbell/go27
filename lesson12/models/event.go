@@ -7,7 +7,7 @@ import (
 )
 
 type Event struct {
-	ID          int
+	ID          int64
 	Name        string    `binding:"required"`
 	Description string    `binding:"required"`
 	Location    string    `binding:"required"`
@@ -25,12 +25,15 @@ func (e Event) Save() error {
 	if err != nil {
 		return err
 	}
+	defer stmt.Close()
+
 	result, err := stmt.Exec(e.Name, e.Description, e.Location, e.DateTime, e.UserID)
 	if err != nil {
 		return err
 	}
 	id, err := result.LastInsertId()
-	events = append(events, e)
+	e.ID = id
+	return err
 }
 
 func GetAllEvent() []Event {
