@@ -29,6 +29,7 @@ func (e Event) Save() error {
 	if err != nil {
 		return err
 	}
+	id, err := result.LastInsertId()
 	events = append(events, e)
 }
 
