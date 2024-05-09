@@ -26,6 +26,9 @@ func (e Event) Save() error {
 		return err
 	}
 	result, err := stmt.Exec(e.Name, e.Description, e.Location, e.DateTime, e.UserID)
+	if err != nil {
+		return err
+	}
 	events = append(events, e)
 }
 
