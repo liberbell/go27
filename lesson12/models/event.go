@@ -53,7 +53,6 @@ func GetAllEvent() ([]Event, error) {
 			return nil, err
 		}
 		events = append(events, event)
-		return events, nil
 	}
 	return events, nil
 }
