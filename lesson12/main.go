@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"strconv"
 
 	"example.com/rest-API/db"
 	"example.com/rest-API/models"
@@ -19,7 +20,11 @@ func main() {
 }
 
 func getEvent(context *gin.Context) {
-
+	eventID, err := strconv.ParseInt(context.Param("id"), 10, 64)
+	if err != nil {
+		context.JSON(http.StatusBadRequest, gin.H{"message": "Could not parse event id."})
+		return
+	}
 }
 
 func getEvents(context *gin.Context) {
