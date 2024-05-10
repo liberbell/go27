@@ -56,3 +56,7 @@ func GetAllEvent() ([]Event, error) {
 	}
 	return events, nil
 }
+
+func GetEventByID(id int64) {
+	query := `SELECT * FROM WHERE id = ?`
+}
