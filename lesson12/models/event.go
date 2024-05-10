@@ -44,5 +44,15 @@ func GetAllEvent() ([]Event, error) {
 		fmt.Println("Error getting events: ", err)
 		return nil, err
 	}
+	defer rows.Close()
+	var events []Event
+	for rows.Next() {
+		var event Event
+		err := rows.Scan(&event.ID, &event.Name, &event.Description, &event.Location, &event.DateTime)
+		if err != nil {
+			return nil, err
+		}
+		events = append(events, event)
+	}
 	return events, nil
 }
