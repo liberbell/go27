@@ -92,4 +92,7 @@ func (event Event) Delete() error {
 		return err
 	}
 
+	defer stmt.Close()
+	_, err = stmt.Exec(event.ID)
+	return err
 }
