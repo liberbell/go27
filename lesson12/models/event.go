@@ -86,5 +86,10 @@ func (event Event) Update() error {
 }
 
 func (event Event) Delete() error {
+	query := `DELETE FROM events WHERE event_id = ?`
+	stmt, err := db.DB.Prepare(query)
+	if err != nil {
+		return err
+	}
 
 }
