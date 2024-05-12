@@ -63,5 +63,9 @@ func updateEvent(context *gin.Context) {
 		return
 	}
 	var updatedEvent models.Event
-
+	err = context.ShouldBindJSON(&updatedEvent)
+	if err != nil {
+		context.JSON(http.StatusBadRequest, gin.H{"message": "Could not parse request data."})
+		return
+	}
 }
