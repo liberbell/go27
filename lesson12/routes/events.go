@@ -85,10 +85,15 @@ func deleteEvent(context *gin.Context) {
 		return
 	}
 
-	_, err = models.GetEventByID(eventID)
+	event, err := models.GetEventByID(eventID)
 	if err != nil {
 		context.JSON(http.StatusInternalServerError, gin.H{"message": "Could not fetch the event.:2"})
 		return
 	}
 
+	err = event.Delete()
+	if err != nil {
+		context.JSON(http.StatusInternalServerError, gin.H{"message": "Could not delete the event.:2"})
+		return
+	}
 }
