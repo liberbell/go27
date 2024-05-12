@@ -84,3 +84,7 @@ func (event Event) Update() error {
 	_, err = stmt.Exec(event.Name, event.Description, event.Location, event.DateTime, event.ID)
 	return err
 }
+
+func (event Event) Delete() error {
+
+}
