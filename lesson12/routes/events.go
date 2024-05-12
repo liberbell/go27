@@ -56,9 +56,12 @@ func updateEvent(context *gin.Context) {
 		context.JSON(http.StatusBadRequest, gin.H{"message": "Could not parse event id."})
 		return
 	}
-	event, err := models.GetEventByID(eventID)
+	_, err = models.GetEventByID(eventID)
+
 	if err != nil {
 		context.JSON(http.StatusInternalServerError, gin.H{"message": "Could not fetch the event.:2"})
 		return
 	}
+	var updatedEvent models.Event
+
 }
