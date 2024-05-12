@@ -81,4 +81,5 @@ func (event Event) Update() error {
 	}
 
 	defer stmt.Close()
+	stmt.Exec(event.Name, event.Description, event.Location, event.DateTime, event.ID)
 }
