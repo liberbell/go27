@@ -70,5 +70,10 @@ func GetEventByID(id int64) (*Event, error) {
 }
 
 func (event Event) Update() {
-
+	query := `
+	UPDATE events
+	SET name = ?, description = ?, location = ?, dateTime = ?
+	WHERE id = ?
+	`
+	db.DB.Prepare(query)
 }
