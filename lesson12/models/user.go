@@ -14,4 +14,10 @@ func (u User) Save() error {
 	if err != nil {
 		return err
 	}
+
+	defer stmt.Close()
+	result, err := stmt.Exec(u.Email, u.Password)
+	if err != nil {
+		return err
+	}
 }
