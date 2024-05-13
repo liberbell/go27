@@ -20,4 +20,7 @@ func (u User) Save() error {
 	if err != nil {
 		return err
 	}
+	userId, err := result.LastInsertId()
+	u.ID = userId
+	return err
 }
