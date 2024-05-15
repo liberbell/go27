@@ -36,5 +36,6 @@ func login(context *gin.Context) {
 	if err != nil {
 		context.JSON(http.StatusUnauthorized, gin.H{"message": "Could not authenticate."})
 	}
+	context.JSON(http.StatusOK, gin.H{"message": "Login successful."})
 
 }
