@@ -31,3 +31,7 @@ func (u User) Save() error {
 	u.ID = userId
 	return err
 }
+
+func (u User) ValidateCredentials() {
+	query := `SELECT email, password FROM users WHERE email = ?, password = ?`
+}
