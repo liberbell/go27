@@ -35,4 +35,7 @@ func (u User) Save() error {
 func (u User) ValidateCredentials() {
 	query := `SELECT email, password FROM users WHERE email = ?`
 	row := db.DB.QueryRow(query, u.Email)
+
+	var retrivedPassword string
+	row.Scan(&retrivedPassword)
 }
