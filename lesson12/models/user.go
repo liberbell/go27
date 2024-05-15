@@ -16,6 +16,7 @@ func (u User) Save() error {
 	}
 
 	defer stmt.Close()
+	// hashed_pass :=
 	result, err := stmt.Exec(u.Email, u.Password)
 	if err != nil {
 		return err
