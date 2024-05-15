@@ -23,7 +23,7 @@ func (u User) Save() error {
 	if err != nil {
 		return err
 	}
-	result, err := stmt.Exec(u.Email, u.Password)
+	result, err := stmt.Exec(u.Email, hashed_pass)
 	if err != nil {
 		return err
 	}
