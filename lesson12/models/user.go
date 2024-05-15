@@ -1,6 +1,8 @@
 package models
 
 import (
+	"errors"
+
 	"example.com/rest-API/db"
 	"example.com/rest-API/utils"
 )
@@ -40,5 +42,10 @@ func (u User) ValidateCredentials() error {
 	err := row.Scan(&retrivedPassword)
 	if err != nil {
 		return err
+	}
+
+	passwordIsValid := utils.CheckPassword(u.Password, retrivedPassword)
+	if !passwordIsValid {
+		return errors.New("Credentials are invalid.")
 	}
 }
