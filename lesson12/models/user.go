@@ -38,13 +38,13 @@ func (u User) ValidateCredentials() error {
 	query := `SELECT email, password FROM users WHERE email = ?`
 	row := db.DB.QueryRow(query, u.Email)
 
-	var retrivedPassword string
-	err := row.Scan(&retrivedPassword)
+	var retrievedPassword string
+	err := row.Scan(&retrievedPassword)
 	if err != nil {
 		return err
 	}
 
-	passwordIsValid := utils.CheckPassword(u.Password, retrivedPassword)
+	passwordIsValid := utils.CheckPassword(u.Password, retrievedPassword)
 	if !passwordIsValid {
 		return errors.New("Credentials are invalid.")
 	}
