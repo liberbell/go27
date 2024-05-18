@@ -40,6 +40,10 @@ func createEvents(context *gin.Context) {
 	}
 
 	err := utils.VerifyToken(token)
+	if err != nil {
+		context.JSON(http.StatusUnauthorized, gin.H{"message": "Not authorized."})
+		return
+	}
 
 	var event models.Event
 	err = context.ShouldBindJSON(&event)
