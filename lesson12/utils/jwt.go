@@ -31,4 +31,14 @@ func VerifyToken(token string) error {
 	if err != nil {
 		return errors.New("Could not parse token.")
 	}
+
+	tokenIsValid := parsedToken.Valid
+	if !tokenIsValid {
+		return errors.New("Invalid token.")
+	}
+
+	claims, ok := parsedToken.Claims.(jwt.MapClaims)
+	if !ok {
+
+	}
 }
