@@ -41,4 +41,7 @@ func VerifyToken(token string) error {
 	if !ok {
 		return errors.New("Invalid token clams.")
 	}
+
+	email := claims["email"]
+	userID := claims["userID"]
 }
