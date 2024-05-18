@@ -5,6 +5,7 @@ import (
 	"strconv"
 
 	"example.com/rest-API/models"
+	"example.com/rest-API/utils"
 	"github.com/gin-gonic/gin"
 )
 
@@ -38,8 +39,10 @@ func createEvents(context *gin.Context) {
 		return
 	}
 
+	err := utils.VerifyToken(token)
+
 	var event models.Event
-	err := context.ShouldBindJSON(&event)
+	err = context.ShouldBindJSON(&event)
 
 	if err != nil {
 		context.JSON(http.StatusBadRequest, gin.H{"message": "Could not parse request data."})
