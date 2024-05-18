@@ -37,11 +37,11 @@ func VerifyToken(token string) error {
 		return errors.New("Invalid token.")
 	}
 
-	claims, ok := parsedToken.Claims.(jwt.MapClaims)
-	if !ok {
-		return errors.New("Invalid token clams.")
-	}
+	// claims, ok := parsedToken.Claims.(jwt.MapClaims)
+	// if !ok {
+	// 	return errors.New("Invalid token clams.")
+	// }
 
-	email := claims["email"]
-	userID := claims["userID"]
+	// email := claims["email"].(string)
+	// userID := claims["userID"].(int64)
 }
