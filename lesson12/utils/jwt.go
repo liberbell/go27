@@ -19,12 +19,16 @@ func GenerateToken(email string, userID int64) (string, error) {
 	return token.SignedString([]byte(secretKey))
 }
 
-func VerifyToken(token string) {
-	jwt.Parse(token, func(token *jwt.Token) (interface{}, error) {
+func VerifyToken(token string) error {
+	parsedToken, err := jwt.Parse(token, func(token *jwt.Token) (interface{}, error) {
 		_, ok := token.Method.(*jwt.SigningMethodHMAC)
 		if !ok {
 			return nil, errors.New("Unexpected signing method.")
 		}
 		return secretKey, nil
 	})
+
+	if err != nil {
+		return errors.New("Could not parse token.")
+	}
 }
