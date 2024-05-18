@@ -44,4 +44,5 @@ func VerifyToken(token string) error {
 
 	// email := claims["email"].(string)
 	// userID := claims["userID"].(int64)
+	return nil
 }
