@@ -29,20 +29,20 @@ func VerifyToken(token string) (int64, error) {
 	})
 
 	if err != nil {
-		return errors.New("Could not parse token.")
+		return 0, errors.New("Could not parse token.")
 	}
 
 	tokenIsValid := parsedToken.Valid
 	if !tokenIsValid {
-		return errors.New("Invalid token.")
+		return 0, errors.New("Invalid token.")
 	}
 
 	claims, ok := parsedToken.Claims.(jwt.MapClaims)
 	if !ok {
-		return errors.New("Invalid token clams.")
+		return 0, errors.New("Invalid token clams.")
 	}
 
 	// email := claims["email"].(string)
 	userID := claims["userID"].(int64)
-	return nil
+	return userID, nil
 }
