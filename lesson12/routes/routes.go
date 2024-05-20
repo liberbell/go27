@@ -8,9 +8,12 @@ import (
 func RegisterRoutes(server *gin.Engine) {
 	server.GET("/events", getEvents)
 	server.GET("/events/:id", getEvent)
-	server.POST("/events", middlewares.Authenticate, createEvents)
-	server.PUT("/events/:id", updateEvent)
-	server.DELETE("/events/:id", deleteEvent)
-	server.POST("/signup", signup)
-	server.POST("/login", login)
+
+	authenticate := server.Group("/")
+	authenticate.POST("/events", middlewares.Authenticate, createEvents)
+
+	authenticate.PUT("/events/:id", updateEvent)
+	authenticate.DELETE("/events/:id", deleteEvent)
+	authenticate.POST("/signup", signup)
+	authenticate.POST("/login", login)
 }
