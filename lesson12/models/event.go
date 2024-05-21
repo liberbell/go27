@@ -103,4 +103,8 @@ func (event Event) Register(userID int64) error {
 	if err != nil {
 		return err
 	}
+
+	defer stmt.Close()
+	_, err = stmt.Exec(event.ID, userID)
+	return err
 }
