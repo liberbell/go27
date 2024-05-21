@@ -20,6 +20,11 @@ func registerForEvents(context *gin.Context) {
 		context.JSON(http.StatusInternalServerError, gin.H{"message": "Could not get event."})
 		return
 	}
+
+	err = event.Register(userID)
+	if err != nil {
+		context.JSON(http.StatusInternalServerError, gin.H{"message": ""})
+	}
 }
 
 func cancelRegistration() {
