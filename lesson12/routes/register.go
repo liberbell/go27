@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"strconv"
 
+	"example.com/rest-API/models"
 	"github.com/gin-gonic/gin"
 )
 
@@ -13,6 +14,10 @@ func registerForEvents(context *gin.Context) {
 	if err != nil {
 		context.JSON(http.StatusBadRequest, gin.H{"message": "Could not parse event id."})
 		return
+	}
+	event, err := models.GetEventByID(eventID)
+	if err != nil {
+		context.JSON(http.StatusInternalServerError, gin.H{"message": "Could not get event."})
 	}
 }
 
