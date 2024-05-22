@@ -31,4 +31,9 @@ func registerForEvents(context *gin.Context) {
 func cancelRegistration(context *gin.Context) {
 	userID := context.GetInt64("userID")
 	eventID, err := strconv.ParseInt(context.Param("id"), 10, 64)
+
+	var event models.Event
+	event.ID = eventID
+
+	event.cancelRegistration(userID)
 }
