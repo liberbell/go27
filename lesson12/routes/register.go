@@ -28,7 +28,7 @@ func registerForEvents(context *gin.Context) {
 	context.JSON(http.StatusCreated, gin.H{"message": "Registered."})
 }
 
-func cancelRegistration() {
+func cancelRegistration(context *gin.Context) {
 	userID := context.GetInt64("userID")
 	eventID, err := strconv.ParseInt(context.Param("id"), 10, 64)
 }
