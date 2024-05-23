@@ -110,7 +110,7 @@ func (event Event) Register(userID int64) error {
 }
 
 func (event Event) CancelRegistration(userID int64) error {
-	query := `DELETE FROM registrations WHERE envent_id = ? AND user_id = ?`
+	query := `DELETE FROM registrations WHERE event_id = ? AND user_id = ?`
 	stmt, err := db.DB.Prepare(query)
 	if err != nil {
 		return err
